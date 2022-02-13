@@ -1,4 +1,7 @@
 # Studybuddies
+Site URL: TBA
+
+Prototype Wireframe: https://marvelapp.com/prototype/16gfi914
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
