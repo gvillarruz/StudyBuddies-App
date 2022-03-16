@@ -1,5 +1,5 @@
 # Studybuddies
-Site URL: TBA
+Site URL: https://study-buddies-app-fhxrf.ondigitalocean.app/home?fbclid=IwAR1oZkFscpg4C_rFBRNuwgLHBcqFlRpn_1o2z6siyBLnHa_LHLwDqnAkSLE
 
 Prototype Wireframe: https://marvelapp.com/prototype/16gfi914
 
