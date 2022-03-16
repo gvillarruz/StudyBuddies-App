@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { LoginService } from './login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  @ViewChild('regMenu') regMenu: any;
+
   title = 'studybuddies';
 
   items!: MenuItem[];
 
-  scrollableItems!: MenuItem[];
+  regItems!: MenuItem[];
 
-  activeItem!: MenuItem;
-
-  activeItem2: MenuItem | undefined;
+  constructor(public loginService: LoginService) {}
 
   ngOnInit() {
     this.items = [
@@ -22,18 +23,12 @@ export class AppComponent {
       {
         label: 'Register',
         icon: 'pi pi-fw pi-pencil',
-        routerLink: 'registration',
+        items: [
+          { label: 'Student', routerLink: 'student-registration' },
+          { label: 'Tutor', routerLink: 'tutor-registration' },
+        ],
       },
       { label: 'Contact Us', icon: 'pi pi-fw pi-file', routerLink: 'contact' },
-      { label: 'Sign In', icon: 'pi pi-fw pi-cog', routerLink: 'signin' },
     ];
-
-    this.scrollableItems = Array.from({ length: 50 }, (_, i) => ({
-      label: `Tab ${i + 1}`,
-    }));
-
-    this.activeItem = this.items[0];
-
-    this.activeItem2 = this.scrollableItems[0];
   }
 }

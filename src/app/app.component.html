@@ -1,5 +1,5 @@
-<div class="card">
-  <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
-</div>
+<p-menubar [model]="items">
+  <button pButton *ngIf="!this.loginService.loggedIn" label="Sign In" icon="pi pi-power-off" routerLink='signin'></button>
+</p-menubar>
 
 <router-outlet></router-outlet>
