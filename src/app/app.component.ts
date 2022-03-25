@@ -24,7 +24,7 @@ export class AppComponent {
       { label: 'Services', icon: 'pi pi-fw pi-file', routerLink: 'contact' },
       {
         label: 'Register',
-        icon: 'pi pi-fw pi-pencil',
+        icon: 'pi pi-angle-double-down',
         items: [
           { label: 'Student', routerLink: 'student-registration' },
           { label: 'Tutor', routerLink: 'tutor-registration' },
