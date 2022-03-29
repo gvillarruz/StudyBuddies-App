@@ -32,7 +32,7 @@ export class AppComponent {
       },
       {
         label: 'Register',
-        icon: 'pi pi-angle-double-down',
+        icon: 'pi pi-pencil',
         items: [
           { label: 'Student', routerLink: 'student-registration' },
           { label: 'Tutor', routerLink: 'tutor-registration' },
