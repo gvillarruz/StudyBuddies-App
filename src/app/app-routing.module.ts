@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { TutorRegistrationComponent } from './tutor-registration/tutor-registration.component';
+import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VerifyComponent } from './verify/verify.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'tutor-registration', component: TutorRegistrationComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'signin', component: SignInComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'verify', component: VerifyComponent },
   { path: '**', component: HomeComponent },
 ];
 

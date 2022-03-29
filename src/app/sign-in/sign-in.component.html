@@ -1,1 +1,6 @@
-<p>sign-in works!</p>
+<h1>Login</h1>
+<div><input type="text" pInputText [(ngModel)]="value1"></div>
+
+<div><p-password [(ngModel)]="password" [toggleMask]="true"></p-password></div>
+
+<div><p-button label="Submit" (click)="this.signIn()" ></p-button></div>

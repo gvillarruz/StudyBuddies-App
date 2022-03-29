@@ -14,6 +14,14 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { TutorRegistrationComponent } from './tutor-registration/tutor-registration.component';
+import { AboutComponent } from './about/about.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { VerifyComponent } from './verify/verify.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -24,6 +32,9 @@ import { TutorRegistrationComponent } from './tutor-registration/tutor-registrat
     SignInComponent,
     StudentRegistrationComponent,
     TutorRegistrationComponent,
+    AboutComponent,
+    DashboardComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +45,11 @@ import { TutorRegistrationComponent } from './tutor-registration/tutor-registrat
     OverlayPanelModule,
     MenubarModule,
     ButtonModule,
+    InputTextModule,
+    FormsModule,
+    PasswordModule,
+    RadioButtonModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { startWith } from 'rxjs';
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-root',
@@ -15,13 +16,20 @@ export class AppComponent {
 
   regItems!: MenuItem[];
 
-  constructor(public loginService: LoginService) {}
+  loggedInStatus: boolean;
+
+  constructor(public loginService: LoginService) {
+    this.loginService.loggedIn.next(true);
+  }
 
   ngOnInit() {
-    this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
-      { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'contact' },
-      { label: 'Services', icon: 'pi pi-fw pi-file', routerLink: 'contact' },
+    let regularItems = [
+      { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'about' },
+      {
+        label: 'Services',
+        icon: 'pi pi-fw pi-file',
+        routerLink: 'contact',
+      },
       {
         label: 'Register',
         icon: 'pi pi-angle-double-down',
@@ -30,7 +38,35 @@ export class AppComponent {
           { label: 'Tutor', routerLink: 'tutor-registration' },
         ],
       },
-      { label: 'Contact Us', icon: 'pi pi-fw pi-file', routerLink: 'contact' },
+      {
+        label: 'Contact Us',
+        icon: 'pi pi-fw pi-file',
+        routerLink: 'contact',
+      },
     ];
+    this.loginService.loggedIn.pipe(startWith(false)).subscribe((value) => {
+      console.log(value);
+      this.loggedInStatus = value;
+      if (!value) {
+        this.items = [
+          { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+          ...regularItems,
+        ];
+      } else {
+        this.items = [
+          {
+            label: 'Dashboard',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'dashboard',
+          },
+          ...regularItems,
+          { label: 'Verify', icon: 'pi pi-fw pi-file', routerLink: 'verify' },
+        ];
+      }
+    });
+  }
+
+  signOut() {
+    this.loginService.loggedIn.next(false);
   }
 }
