@@ -9,6 +9,22 @@ export class TutorRegistrationComponent implements OnInit {
   value1;
   password;
 
+  firstName;
+  lastName;
+  phone;
+  email;
+  birthday;
+  gender;
+  province;
+  relation;
+
+  address;
+  city;
+
+  wasTutor;
+  eligibleToWork;
+  over18;
+
   constructor() {}
 
   ngOnInit(): void {}

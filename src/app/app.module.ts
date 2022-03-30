@@ -28,7 +28,11 @@ import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
 import { StudRegAComponent } from './student-registration/stud-reg-a/stud-reg-a.component';
 import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
 import { CalendarModule } from 'primeng/calendar';
-
+import { ToastModule } from 'primeng/toast';
+import { DividerModule } from 'primeng/divider';
+import { TutorCourseRegistrationComponent } from './tutor-course-registration/tutor-course-registration.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +50,7 @@ import { CalendarModule } from 'primeng/calendar';
     TutorSignupComponent,
     StudRegAComponent,
     StudRegBComponent,
+    TutorCourseRegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,10 @@ import { CalendarModule } from 'primeng/calendar';
     RadioButtonModule,
     DropdownModule,
     CalendarModule,
+    ToastModule,
+    DividerModule,
+    FileUploadModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

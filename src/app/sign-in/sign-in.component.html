@@ -1,6 +1,10 @@
 <h1>Login</h1>
-<div><input type="text" pInputText [(ngModel)]="value1"></div>
 
-<div><p-password [(ngModel)]="password" [toggleMask]="true"></p-password></div>
+<p-toast position="top-right"></p-toast>
 
-<div><p-button label="Submit" (click)="this.signIn()" routerLink="/student-registration"></p-button></div>
+<div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="username">
+  <label for="float-input">Username</label></div>
+
+<div><p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password></div>
+
+<div><p-button label="Submit" (click)="this.signIn()" ></p-button></div>

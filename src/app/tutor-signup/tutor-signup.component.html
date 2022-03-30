@@ -1,7 +1,24 @@
 <h1>Tutor Registration</h1>
+<p-toast position="top-right"></p-toast>
+<div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="username">
+  <label for="float-input">Username</label></div>
 
-<div><input type="text" pInputText [(ngModel)]="username"></div>
+<div>
+  <p-password [(ngModel)]="password" [toggleMask]="true">
+    <ng-template pTemplate="header">
+        <h6>Pick a password</h6>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <p-divider></p-divider>
+        <p class="mt-2">Suggestions</p>
+        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+            <li>At least one lowercase</li>
+            <li>At least one uppercase</li>
+            <li>At least one numeric</li>
+            <li>Minimum 8 characters</li>
+        </ul>
+    </ng-template>
+</p-password>
+</div>
 
-<div><p-password [(ngModel)]="password" [toggleMask]="true"></p-password></div>
-
-<div><p-button label="Submit"></p-button></div>
+<div><p-button label="Submit" (click)="this.submit()"></p-button></div>
