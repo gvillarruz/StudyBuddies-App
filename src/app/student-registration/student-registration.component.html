@@ -1,7 +1,8 @@
-<h1>Parent Sign Up</h1>
-<div><input type="text" pInputText [(ngModel)]="value1"></div>
+<ng-container *ngIf="this.studentService.determineFlow() === 'parent'; else elseTemplate">
+<app-stud-reg-a></app-stud-reg-a>
+</ng-container>
+<ng-template #elseTemplate>
+<app-stud-reg-b></app-stud-reg-b>
+</ng-template>
 
-<div><p-password [(ngModel)]="password" [toggleMask]="true"></p-password></div>
-
-<div><p-button label="Submit"></p-button></div>
 

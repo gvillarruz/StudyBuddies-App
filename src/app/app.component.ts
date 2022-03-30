@@ -26,19 +26,6 @@ export class AppComponent {
     let regularItems = [
       { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'about' },
       {
-        label: 'Services',
-        icon: 'pi pi-fw pi-file',
-        routerLink: 'contact',
-      },
-      {
-        label: 'Register',
-        icon: 'pi pi-pencil',
-        items: [
-          { label: 'Student', routerLink: 'student-registration' },
-          { label: 'Tutor', routerLink: 'tutor-registration' },
-        ],
-      },
-      {
         label: 'Contact Us',
         icon: 'pi pi-fw pi-file',
         routerLink: 'contact',
@@ -50,6 +37,19 @@ export class AppComponent {
       if (!value) {
         this.items = [
           { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+          {
+            label: 'Services',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'contact',
+          },
+          {
+            label: 'Register',
+            icon: 'pi pi-pencil',
+            items: [
+              { label: 'Student', routerLink: 'student-signup' },
+              { label: 'Tutor', routerLink: 'tutor-signup' },
+            ],
+          },
           ...regularItems,
         ];
       } else {
@@ -60,6 +60,11 @@ export class AppComponent {
             routerLink: 'dashboard',
           },
           ...regularItems,
+          {
+            label: 'Course Registration',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'course-registration',
+          },
           { label: 'Verify', icon: 'pi pi-fw pi-file', routerLink: 'verify' },
         ];
       }

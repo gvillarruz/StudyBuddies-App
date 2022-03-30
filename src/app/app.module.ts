@@ -22,6 +22,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifyComponent } from './verify/verify.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { DropdownModule } from 'primeng/dropdown';
+import { CourseRegistrationComponent } from './course-registration/course-registration.component';
+import { StudentSignupComponent } from './student-signup/student-signup.component';
+import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
+import { StudRegAComponent } from './student-registration/stud-reg-a/stud-reg-a.component';
+import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,11 @@ import { DropdownModule } from 'primeng/dropdown';
     AboutComponent,
     DashboardComponent,
     VerifyComponent,
+    CourseRegistrationComponent,
+    StudentSignupComponent,
+    TutorSignupComponent,
+    StudRegAComponent,
+    StudRegBComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +61,7 @@ import { DropdownModule } from 'primeng/dropdown';
     PasswordModule,
     RadioButtonModule,
     DropdownModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
