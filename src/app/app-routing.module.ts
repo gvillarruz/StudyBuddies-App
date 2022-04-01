@@ -11,6 +11,7 @@ import { VerifyComponent } from './verify/verify.component';
 import { CourseRegistrationComponent } from './course-registration/course-registration.component';
 import { StudentSignupComponent } from './student-signup/student-signup.component';
 import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
+import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'verify', component: VerifyComponent },
   { path: 'course-registration', component: CourseRegistrationComponent },
+  { path: 'stud-reg-b', component: StudRegBComponent },
   { path: '**', component: HomeComponent },
 ];
 

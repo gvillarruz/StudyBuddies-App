@@ -29,13 +29,13 @@
     <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
     <label for="gender3">Other</label>
 </div>
-<div>
-  <label for="integeronly">Allergies</label>
-  <input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
 
   <div>
     <label for="integeronly">Home Address</label>
     <input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
+    <div>
+      <label for="postalCode">Postal Code</label>
+      <input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
   <div>
     <label for="integeronly">City</label>
     <input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
@@ -74,6 +74,17 @@
 <div class="field-radiobutton">
     <p-radioButton name="option" value="no" [(ngModel)]="over18" inputId="no"></p-radioButton>
     <label for="no">No</label>
+</div>
+
+<div>
+  <label>Are you applying for a paid or volunteer position?</label>
+  <div class="field-radiobutton">
+    <p-radioButton name="option" value="paid" [(ngModel)]="over18" inputId="paid"></p-radioButton>
+    <label for="paid">Paid</label>
+</div>
+<div class="field-radiobutton">
+    <p-radioButton name="option" value="volunteer" [(ngModel)]="over18" inputId="volunteer"></p-radioButton>
+    <label for="volunteer">Volunteer</label>
 </div>
 
 <p>Please attach your Resume below. (Accepted forms: '.docx' & '.pdf')</p>

@@ -19,7 +19,9 @@ export class TutorRegistrationComponent implements OnInit {
   relation;
 
   address;
+  postalCode;
   city;
+  
 
   wasTutor;
   eligibleToWork;

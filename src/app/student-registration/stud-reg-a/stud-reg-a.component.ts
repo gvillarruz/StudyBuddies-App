@@ -12,6 +12,7 @@ export class StudRegAComponent implements OnInit {
   phone;
   email;
   address;
+  postalCode;
   city;
   province;
   relation;
