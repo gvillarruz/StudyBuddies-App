@@ -30,9 +30,10 @@ import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.
 import { CalendarModule } from 'primeng/calendar';
 import { ToastModule } from 'primeng/toast';
 import { DividerModule } from 'primeng/divider';
-import { TutorCourseRegistrationComponent } from './tutor-course-registration/tutor-course-registration.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
+import { EnrollmentComponent } from './course-registration/enrollment/enrollment.component';
+import { CourseCreationComponent } from './course-registration/course-creation/course-creation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     TutorSignupComponent,
     StudRegAComponent,
     StudRegBComponent,
-    TutorCourseRegistrationComponent,
+    EnrollmentComponent,
+    CourseCreationComponent,
   ],
   imports: [
     BrowserModule,
