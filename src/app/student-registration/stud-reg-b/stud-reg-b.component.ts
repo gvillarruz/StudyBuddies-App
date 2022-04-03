@@ -8,12 +8,10 @@ import { Router } from '@angular/router';
 export class StudRegBComponent implements OnInit {
   firstName;
   lastName;
-  phone;
   email;
   birthday;
   gender;
-  province;
-  relation;
+  allergies;
 
   gradeOptions = [
     { name: 'Grade 1', value: 1 },

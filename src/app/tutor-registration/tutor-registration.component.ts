@@ -21,11 +21,11 @@ export class TutorRegistrationComponent implements OnInit {
   address;
   postalCode;
   city;
-  
 
   wasTutor;
   eligibleToWork;
   over18;
+  isPaid;
 
   constructor() {}
 
