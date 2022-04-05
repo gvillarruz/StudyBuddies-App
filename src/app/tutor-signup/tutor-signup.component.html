@@ -21,9 +21,6 @@
 </p-password>
 </div>
 
-<div><p-button label="Submit" (click)="this.submit()"></p-button></div>
-
-<h1>Tutor Application</h1>
 
 <div>
   <label for="firstName">First Name</label>
@@ -112,5 +109,5 @@
 <p>Please attach your Resume below. (Accepted forms: '.docx' & '.pdf')</p>
 <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
 
-<p-button label="Submit" ></p-button>
+<p-button label="Submit" (onClick)="this.submit()"></p-button>
 
