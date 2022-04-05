@@ -8,8 +8,24 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class TutorSignupComponent implements OnInit {
-  username;
+  email;
   password;
+
+  firstName;
+  lastName;
+  phone;
+  birthday;
+  gender;
+  province;
+  relation;
+  address;
+  postalCode;
+  city;
+
+  wasTutor;
+  eligibleToWork;
+  over18;
+  isPaid;
 
   constructor(private messageService: MessageService) {}
 

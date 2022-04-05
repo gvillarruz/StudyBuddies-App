@@ -4,7 +4,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { TutorRegistrationComponent } from './tutor-registration/tutor-registration.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifyComponent } from './verify/verify.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'student-signup', component: StudentSignupComponent },
   { path: 'tutor-signup', component: TutorSignupComponent },
   { path: 'student-registration', component: StudentRegistrationComponent },
-  { path: 'tutor-registration', component: TutorRegistrationComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'about', component: AboutComponent },

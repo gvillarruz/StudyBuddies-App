@@ -13,7 +13,6 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
-import { TutorRegistrationComponent } from './tutor-registration/tutor-registration.component';
 import { AboutComponent } from './about/about.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +24,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CourseRegistrationComponent } from './course-registration/course-registration.component';
 import { StudentSignupComponent } from './student-signup/student-signup.component';
 import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
-import { StudRegAComponent } from './student-registration/stud-reg-a/stud-reg-a.component';
 import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
 import { CalendarModule } from 'primeng/calendar';
 import { ToastModule } from 'primeng/toast';
@@ -33,7 +31,6 @@ import { DividerModule } from 'primeng/divider';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EnrollmentComponent } from './course-registration/enrollment/enrollment.component';
-import { CourseCreationComponent } from './course-registration/course-creation/course-creation.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
   declarations: [
@@ -43,17 +40,14 @@ import { TokenInterceptorService } from './token-interceptor.service';
     ContactComponent,
     SignInComponent,
     StudentRegistrationComponent,
-    TutorRegistrationComponent,
     AboutComponent,
     DashboardComponent,
     VerifyComponent,
     CourseRegistrationComponent,
     StudentSignupComponent,
     TutorSignupComponent,
-    StudRegAComponent,
     StudRegBComponent,
     EnrollmentComponent,
-    CourseCreationComponent,
   ],
   imports: [
     BrowserModule,
