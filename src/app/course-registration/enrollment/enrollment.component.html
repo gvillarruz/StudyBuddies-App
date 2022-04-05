@@ -1,0 +1,50 @@
+<h1>Student Course Registration</h1>
+
+<div>
+  <label>Do you want the student to enroll for paid tutoring or Drop-Off Sesions?</label>
+  <div class="field-radiobutton">
+    <p-radioButton name="option" value="paid" [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
+    <label for="paid">Paid Tutoring</label>
+</div>
+<div class="field-radiobutton">
+    <p-radioButton name="option" value="free" [(ngModel)]="isPaid" inputId="free"></p-radioButton>
+    <label for="free">Drop-Off Sessions</label>
+</div>
+
+<div>
+  <label>Select the tutoring method you want to opt for:</label>
+  <div class="field-radiobutton">
+    <p-radioButton name="option" value="online" [(ngModel)]="isOnline" inputId="online"></p-radioButton>
+    <label for="online">Online</label>
+</div>
+<div class="field-radiobutton">
+    <p-radioButton name="option" value="offline" [(ngModel)]="isOnline" inputId="offline"></p-radioButton>
+    <label for="offline">In-Person</label>
+</div>
+
+<div>
+  <label>Select the tutoring form you want to opt for:</label>
+  <div class="field-radiobutton">
+    <p-radioButton name="option" value="single" [(ngModel)]="isGroup" inputId="single"></p-radioButton>
+    <label for="single">One-on-One Tutoring</label>
+</div>
+<div class="field-radiobutton">
+    <p-radioButton name="option" value="group" [(ngModel)]="isGroup" inputId="group"></p-radioButton>
+    <label for="group">Group Tutoring</label>
+</div>
+
+<div>
+  <label for="integeronly">Grade</label>
+  <p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown>
+</div>
+
+<div>
+  <label for="integeronly">Subject</label>
+  <p-dropdown [options]="subjectOptions" [(ngModel)]="selectedSubject" placeholder="Select a Subject" optionLabel="name" [showClear]="true"></p-dropdown>
+</div>
+
+<div><p-button label="Submit"></p-button></div>
+<ng-container *ngIf="true;">
+
+</ng-container>
+

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
-  loggedIn: boolean = false;
-  constructor() { }
+  loggedIn: Subject<boolean> = new Subject<boolean>();
+  constructor() {
+    this.loggedIn.next(false);
+  }
 }
