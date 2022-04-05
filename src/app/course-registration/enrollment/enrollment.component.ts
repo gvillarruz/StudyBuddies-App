@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-enrollment',
   templateUrl: './enrollment.component.html',
   styleUrls: ['./enrollment.component.scss'],
+  providers: [MessageService],
 })
 export class EnrollmentComponent implements OnInit {
   isPaid;
@@ -34,7 +36,44 @@ export class EnrollmentComponent implements OnInit {
   ];
   selectedSubject;
 
-  constructor() {}
-
+  constructor(
+    private messageService: MessageService,
+    private http: HttpClient
+  ) {}
+  submit() {
+    if (
+      this.isPaid == null ||
+      this.isOnline == null ||
+      this.isGroup == null ||
+      this.selectedGrade == null ||
+      this.selectedSubject == null
+    ) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'All fields are required',
+      });
+    } else {
+      this.http
+        .post(
+          'https://cps-888-study-budies-ueaae.ondigitalocean.app/enrollment',
+          {
+            isPaid: this.isPaid,
+            isOnline: this.isOnline,
+            isGroup: this.isGroup,
+            grade: this.selectedGrade.value,
+            subject: this.selectedSubject.value,
+          }
+        )
+        .subscribe((data) => {
+          console.log(data);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Enrollment successful',
+          });
+        });
+    }
+  }
   ngOnInit(): void {}
 }

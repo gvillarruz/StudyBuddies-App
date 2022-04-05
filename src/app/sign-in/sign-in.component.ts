@@ -22,13 +22,6 @@ export class SignInComponent implements OnInit {
 
   signIn() {
     this.loginService.loggedIn.next(true);
-
-    if (false) {
-      this.router.navigate(['/dashboard']);
-    } else if (true) {
-      this.router.navigate(['/student-registration']);
-    } else {
-      this.router.navigate(['/tutor-registration']);
-    }
+    this.router.navigate(['/dashboard']);
   }
 }

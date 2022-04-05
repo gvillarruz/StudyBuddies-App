@@ -1,5 +1,5 @@
 <h1>Student Course Registration</h1>
-
+<p-toast position="top-right"></p-toast>
 <div>
   <label>Do you want the student to enroll for paid tutoring or Drop-Off Sesions?</label>
   <div class="field-radiobutton">
@@ -43,7 +43,7 @@
   <p-dropdown [options]="subjectOptions" [(ngModel)]="selectedSubject" placeholder="Select a Subject" optionLabel="name" [showClear]="true"></p-dropdown>
 </div>
 
-<div><p-button label="Submit"></p-button></div>
+<div><p-button label="Submit" (onClick)="this.submit()"></p-button></div>
 <ng-container *ngIf="true;">
 
 </ng-container>

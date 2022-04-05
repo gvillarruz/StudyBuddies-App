@@ -59,11 +59,15 @@ export class AppComponent {
             icon: 'pi pi-fw pi-file',
             routerLink: 'dashboard',
           },
-          ...regularItems,
           {
             label: 'Course Registration',
             icon: 'pi pi-fw pi-file',
             routerLink: 'course-registration',
+          },
+          {
+            label: 'Student Registration',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'stud-reg-b',
           },
           { label: 'Verify', icon: 'pi pi-fw pi-file', routerLink: 'verify' },
         ];
