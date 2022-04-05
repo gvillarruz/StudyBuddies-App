@@ -1,65 +1,88 @@
-<body style="background-color:#DCEEF0"></body>
+<body style="background-color:#DCEEF0">
     <h1>Tutor Application</h1>
 
     <div>
       <label for="firstName">First Name</label>
-      <input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
+      <input type="text" pInputText [(ngModel)]="firstName" inputId="firstName">
+    </div>
+
     <div>
       <label for="lastName">Last Name</label>
-      <input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
+      <input type="text" pInputText [(ngModel)]="lastName" inputId="lastName">
+    </div>
+
     <div>
       <label for="phone">Phone Number</label>
-      <input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
+      <input type="text" pInputText [(ngModel)]="phone" inputId="phone">
+    </div>
+    
     <div>
       <label for="email">Email Address</label>
-      <input type="text" pInputText [(ngModel)]="email" inputId="email"></div>
+      <input type="text" pInputText [(ngModel)]="email" inputId="email">
+    </div>
+
     <div>
       <label for="birthday">Birth Date</label>
-        <p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar>
-    <div>
-      <label>Gender</label>
-      <div class="field-radiobutton">
-        <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
-        <label for="gender1">Male</label>
+      <p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar>
     </div>
+
+    <div>
+        <label>Gender</label>
+        <div class="field-radiobutton">
+            <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
+            <label for="gender1">Male</label>
+        </div>
+    </div>
+
     <div class="field-radiobutton">
         <p-radioButton name="sex" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
         <label for="gender2">Female</label>
     </div>
+
     <div class="field-radiobutton">
         <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
         <label for="gender3">Other</label>
     </div>
     
-      <div>
-        <label for="integeronly">Home Address</label>
-        <input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
-        <div>
-          <label for="postalCode">Postal Code</label>
-          <input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
-      <div>
-        <label for="integeronly">City</label>
-        <input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
-      <div>
-        <label for="integeronly">Province</label>
-        <input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
-    
     <div>
-      <label>Do you have past work experience as a tutor?</label>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="wasTutor" inputId="yes"></p-radioButton>
-        <label for="yes">Yes</label>
+        <label for="integeronly">Home Address</label>
+        <input type="text" pInputText [(ngModel)]="address" inputId="address">
     </div>
+
+    <div>
+        <label for="postalCode">Postal Code</label>
+        <input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode">
+    </div>
+
+    <div>
+        <label for="integeronly">City</label>
+        <input type="text" pInputText [(ngModel)]="city" inputId="city">
+    </div>
+
+    <div>
+        <label for="integeronly">Province</label>
+        <input type="text" pInputText [(ngModel)]="province" inputId="province">
+    </div>
+
+    <div>
+        <label>Do you have past work experience as a tutor?</label>
+        <div class="field-radiobutton">
+            <p-radioButton name="option" value="yes" [(ngModel)]="wasTutor" inputId="yes"></p-radioButton>
+            <label for="yes">Yes</label>
+        </div> 
+    </div>
+    
     <div class="field-radiobutton">
         <p-radioButton name="option" value="no" [(ngModel)]="wasTutor" inputId="no"></p-radioButton>
         <label for="no">No</label>
     </div>
     
     <div>
-      <label>Are you eligible to work in Canada?</label>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="eligibleToWork" inputId="yes"></p-radioButton>
-        <label for="yes">Yes</label>
+        <label>Are you eligible to work in Canada?</label>
+        <div class="field-radiobutton">
+            <p-radioButton name="option" value="yes" [(ngModel)]="eligibleToWork" inputId="yes"></p-radioButton>
+            <label for="yes">Yes</label>
+        </div>
     </div>
     <div class="field-radiobutton">
         <p-radioButton name="option" value="no" [(ngModel)]="eligibleToWork" inputId="no"></p-radioButton>
@@ -67,22 +90,26 @@
     </div>
     
     <div>
-      <label>Are you over the age of 18?</label>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="over18" inputId="yes"></p-radioButton>
-        <label for="yes">Yes</label>
+        <label>Are you over the age of 18?</label>
+        <div class="field-radiobutton">
+            <p-radioButton name="option" value="yes" [(ngModel)]="over18" inputId="yes"></p-radioButton>
+            <label for="yes">Yes</label>
+        </div>
     </div>
+
     <div class="field-radiobutton">
         <p-radioButton name="option" value="no" [(ngModel)]="over18" inputId="no"></p-radioButton>
         <label for="no">No</label>
     </div>
     
     <div>
-      <label>Are you applying for a paid or volunteer position?</label>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="paid" [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
-        <label for="paid">Paid</label>
+        <label>Are you applying for a paid or volunteer position?</label>
+        <div class="field-radiobutton">
+            <p-radioButton name="option" value="paid" [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
+            <label for="paid">Paid</label>
+        </div>
     </div>
+
     <div class="field-radiobutton">
         <p-radioButton name="option" value="volunteer" [(ngModel)]="isPaid" inputId="volunteer"></p-radioButton>
         <label for="volunteer">Volunteer</label>
@@ -92,3 +119,4 @@
     <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
     
     <p-button label="Submit" ></p-button>
+</body>
