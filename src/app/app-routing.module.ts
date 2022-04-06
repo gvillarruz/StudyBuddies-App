@@ -12,6 +12,7 @@ import { StudentSignupComponent } from './student-signup/student-signup.componen
 import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
 import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
 import { AuthGuard } from './auth.guard';
+import { ServicesComponent } from './services/services.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'services', component: ServicesComponent },
   {
     path: 'dashboard',
     component: DashboardComponent,

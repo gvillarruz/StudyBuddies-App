@@ -33,6 +33,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EnrollmentComponent } from './course-registration/enrollment/enrollment.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
+import { ServicesComponent } from './services/services.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { AuthGuard } from './auth.guard';
     TutorSignupComponent,
     StudRegBComponent,
     EnrollmentComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
