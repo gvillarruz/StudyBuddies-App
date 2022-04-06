@@ -11,10 +11,7 @@ export class DashboardComponent implements OnInit {
   name;
 
   constructor(public loginService: LoginService) {
-    this.loginService.userType.subscribe((res) => {
-      this.name = res;
-      console.log(this.name);
-    });
+
   }
 
   ngOnInit(): void {}

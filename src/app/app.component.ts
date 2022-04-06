@@ -17,92 +17,143 @@ export class AppComponent {
   regItems!: MenuItem[];
 
   loggedInStatus: boolean;
+  regularItems = [
+    { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'about' },
+    {
+      label: 'Contact Us',
+      icon: 'pi pi-fw pi-file',
+      routerLink: 'contact',
+    },
+  ];
 
   constructor(public loginService: LoginService) {
     this.loginService.loggedIn.next(true);
+
+    if (this.loginService.userLoggedIn()) {
+      console.log('logged in');
+      const type = localStorage.getItem('userType');
+
+      if (type == 'parent') {
+        this.items = [
+          {
+            label: 'Dashboard',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'dashboard',
+          },
+          {
+            label: 'Course Registration',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'course-registration',
+          },
+          {
+            label: 'Student Registration',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'stud-reg-b',
+          },
+          {
+            label: 'Verify',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'verify',
+          },
+        ];
+      } else if (type == 'tutor') {
+        this.items = [
+          {
+            label: 'Dashboard',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'dashboard',
+          },
+          {
+            label: 'Verify',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'verify',
+          },
+        ];
+      }
+    } else {
+      this.items = [
+        { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+        {
+          label: 'Services',
+          icon: 'pi pi-fw pi-file',
+          routerLink: 'contact',
+        },
+        {
+          label: 'Register',
+          icon: 'pi pi-pencil',
+          items: [
+            { label: 'Student', routerLink: 'student-signup' },
+            { label: 'Tutor', routerLink: 'tutor-signup' },
+          ],
+        },
+        ...this.regularItems,
+      ];
+    }
   }
 
   ngOnInit() {
-    let regularItems = [
-      { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'about' },
-      {
-        label: 'Contact Us',
-        icon: 'pi pi-fw pi-file',
-        routerLink: 'contact',
-      },
-    ];
+    this.loginService.loggedIn.subscribe((status) => {
+      if (this.loginService.userLoggedIn()) {
+        console.log('logged in');
+        const type = localStorage.getItem('userType');
 
-    combineLatest(
-      this.loginService.loggedIn.pipe(startWith(false)),
-      this.loginService.userType.pipe(startWith(''))
-    )
-      .pipe(
-        map(([loggedIn, userType]) => ({
-          loggedIn: loggedIn,
-          userType: userType,
-        }))
-      )
-      .subscribe((res: any) => {
-        console.log(res);
-        this.loggedInStatus = res.loggedIn;
-        if (!res.loggedIn) {
+        if (type == 'parent') {
           this.items = [
-            { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
             {
-              label: 'Services',
+              label: 'Dashboard',
               icon: 'pi pi-fw pi-file',
-              routerLink: 'contact',
+              routerLink: 'dashboard',
             },
             {
-              label: 'Register',
-              icon: 'pi pi-pencil',
-              items: [
-                { label: 'Student', routerLink: 'student-signup' },
-                { label: 'Tutor', routerLink: 'tutor-signup' },
-              ],
+              label: 'Course Registration',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'course-registration',
             },
-            ...regularItems,
+            {
+              label: 'Student Registration',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'stud-reg-b',
+            },
+            {
+              label: 'Verify',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'verify',
+            },
           ];
-        } else {
-          if (res.userType == 'parent') {
-            this.items = [
-              {
-                label: 'Dashboard',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'dashboard',
-              },
-              {
-                label: 'Course Registration',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'course-registration',
-              },
-              {
-                label: 'Student Registration',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'stud-reg-b',
-              },
-              {
-                label: 'Verify',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'verify',
-              },
-            ];
-          } else if (res.userType == 'tutor') {
-            this.items = [
-              {
-                label: 'Dashboard',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'dashboard',
-              },
-              {
-                label: 'Verify',
-                icon: 'pi pi-fw pi-file',
-                routerLink: 'verify',
-              },
-            ];
-          }
+        } else if (type == 'tutor') {
+          this.items = [
+            {
+              label: 'Dashboard',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'dashboard',
+            },
+            {
+              label: 'Verify',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'verify',
+            },
+          ];
         }
-      });
+      } else {
+        this.items = [
+          { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+          {
+            label: 'Services',
+            icon: 'pi pi-fw pi-file',
+            routerLink: 'contact',
+          },
+          {
+            label: 'Register',
+            icon: 'pi pi-pencil',
+            items: [
+              { label: 'Student', routerLink: 'student-signup' },
+              { label: 'Tutor', routerLink: 'tutor-signup' },
+            ],
+          },
+          ...this.regularItems,
+        ];
+      }
+    });
   }
 
   signOut() {

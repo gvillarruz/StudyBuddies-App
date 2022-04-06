@@ -11,6 +11,7 @@ import { CourseRegistrationComponent } from './course-registration/course-regist
 import { StudentSignupComponent } from './student-signup/student-signup.component';
 import { TutorSignupComponent } from './tutor-signup/tutor-signup.component';
 import { StudRegBComponent } from './student-registration/stud-reg-b/stud-reg-b.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,10 +23,22 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'verify', component: VerifyComponent },
-  { path: 'course-registration', component: CourseRegistrationComponent },
-  { path: 'stud-reg-b', component: StudRegBComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'verify', component: VerifyComponent, canActivate: [AuthGuard] },
+  {
+    path: 'stud-reg-b',
+    component: StudRegBComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'course-registration',
+    component: CourseRegistrationComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '**', component: HomeComponent },
 ];
 

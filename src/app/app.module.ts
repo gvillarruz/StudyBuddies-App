@@ -32,6 +32,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EnrollmentComponent } from './course-registration/enrollment/enrollment.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
       useClass: TokenInterceptorService,
       multi: true,
     },
+    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })

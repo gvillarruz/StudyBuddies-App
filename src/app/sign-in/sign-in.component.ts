@@ -46,8 +46,8 @@ export class SignInComponent implements OnInit {
             });
           } else {
             localStorage.setItem('token', res.token);
+            localStorage.setItem('userType', res.userType);
             this.loginService.loggedIn.next(true);
-            this.loginService.userType.next(res.userType);
             this.router.navigate(['/dashboard']);
           }
         });
