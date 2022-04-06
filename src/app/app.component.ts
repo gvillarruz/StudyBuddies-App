@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { MenuItem } from 'primeng/api';
 import { combineLatest, map, startWith } from 'rxjs';
 import { LoginService } from './login.service';
@@ -26,7 +27,8 @@ export class AppComponent {
     },
   ];
 
-  constructor(public loginService: LoginService) {
+  constructor(public loginService: LoginService, private titleService: Title) {
+    this.titleService.setTitle('Study Buddies');
     this.loginService.loggedIn.next(true);
 
     if (this.loginService.userLoggedIn()) {
