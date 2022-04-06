@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class LoginService {
   loggedIn: Subject<boolean> = new Subject<boolean>();
+  userType: Subject<string> = new Subject<string>();
   constructor() {
     this.loggedIn.next(false);
   }

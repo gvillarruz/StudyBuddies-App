@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { startWith } from 'rxjs';
+import { combineLatest, map, startWith } from 'rxjs';
 import { LoginService } from './login.service';
 @Component({
   selector: 'app-root',
@@ -31,48 +31,78 @@ export class AppComponent {
         routerLink: 'contact',
       },
     ];
-    this.loginService.loggedIn.pipe(startWith(false)).subscribe((value) => {
-      console.log(value);
-      this.loggedInStatus = value;
-      if (!value) {
-        this.items = [
-          { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
-          {
-            label: 'Services',
-            icon: 'pi pi-fw pi-file',
-            routerLink: 'contact',
-          },
-          {
-            label: 'Register',
-            icon: 'pi pi-pencil',
-            items: [
-              { label: 'Student', routerLink: 'student-signup' },
-              { label: 'Tutor', routerLink: 'tutor-signup' },
-            ],
-          },
-          ...regularItems,
-        ];
-      } else {
-        this.items = [
-          {
-            label: 'Dashboard',
-            icon: 'pi pi-fw pi-file',
-            routerLink: 'dashboard',
-          },
-          {
-            label: 'Course Registration',
-            icon: 'pi pi-fw pi-file',
-            routerLink: 'course-registration',
-          },
-          {
-            label: 'Student Registration',
-            icon: 'pi pi-fw pi-file',
-            routerLink: 'stud-reg-b',
-          },
-          { label: 'Verify', icon: 'pi pi-fw pi-file', routerLink: 'verify' },
-        ];
-      }
-    });
+
+    combineLatest(
+      this.loginService.loggedIn.pipe(startWith(false)),
+      this.loginService.userType.pipe(startWith(''))
+    )
+      .pipe(
+        map(([loggedIn, userType]) => ({
+          loggedIn: loggedIn,
+          userType: userType,
+        }))
+      )
+      .subscribe((res: any) => {
+        console.log(res);
+        this.loggedInStatus = res.loggedIn;
+        if (!res.loggedIn) {
+          this.items = [
+            { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+            {
+              label: 'Services',
+              icon: 'pi pi-fw pi-file',
+              routerLink: 'contact',
+            },
+            {
+              label: 'Register',
+              icon: 'pi pi-pencil',
+              items: [
+                { label: 'Student', routerLink: 'student-signup' },
+                { label: 'Tutor', routerLink: 'tutor-signup' },
+              ],
+            },
+            ...regularItems,
+          ];
+        } else {
+          if (res.userType == 'parent') {
+            this.items = [
+              {
+                label: 'Dashboard',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'dashboard',
+              },
+              {
+                label: 'Course Registration',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'course-registration',
+              },
+              {
+                label: 'Student Registration',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'stud-reg-b',
+              },
+              {
+                label: 'Verify',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'verify',
+              },
+            ];
+          } else if (res.userType == 'tutor') {
+            this.items = [
+              {
+                label: 'Dashboard',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'dashboard',
+              },
+              {
+                label: 'Verify',
+                icon: 'pi pi-fw pi-file',
+                routerLink: 'verify',
+              },
+            ];
+          }
+        }
+      });
   }
 
   signOut() {
