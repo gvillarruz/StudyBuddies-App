@@ -1,0 +1,50 @@
+
+h1 {
+    color: #47525E;
+    font-family: "Abril Fatface";
+    font-size: 65px;
+    width: 864px;
+    text-align: left;
+    margin-left: 100px;
+}
+p {
+    color:#8190A5;
+    font-family: "Lato";
+    font-size: 23px;
+    width: 731px;
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 142px;
+}
+
+#aboutImages img:nth-of-type(1) {
+    border-radius: 36px;
+    width: 450px;
+    height: 231px;
+}
+
+#aboutImages img:nth-of-type(2) {
+    border-radius: 58px;
+    width: 418px;
+    height: 220px;
+}
+
+#aboutParent {
+    background-color:#DCEEF0;
+    width: 50%;
+    height: auto;
+}
+
+#aboutDescription {
+    background-color:#DCEEF0;
+    float: left;
+    width: 50%
+}
+
+#aboutImages {
+    background-color:#DCEEF0;
+    float: left;
+    width: 50%;
+    height: 640px;
+    margin-bottom:45px;
+}

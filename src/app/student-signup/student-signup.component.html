@@ -1,8 +1,9 @@
+<body style="background-color:#DCEEF0">
 <h1>Parent Sign Up</h1>
 <p-toast position="top-right"></p-toast>
 <div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="username">
   <label for="float-input">Username</label></div>
-  
+
 <div>
   <p-password [(ngModel)]="password" [toggleMask]="true">
     <ng-template pTemplate="header">
@@ -22,3 +23,4 @@
 </div>
 
 <div><p-button label="Submit" (click)="this.submit()"></p-button></div>
+</body>
