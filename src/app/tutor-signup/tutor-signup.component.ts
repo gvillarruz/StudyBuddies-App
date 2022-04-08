@@ -77,7 +77,6 @@ export class TutorSignupComponent implements OnInit {
         })
         .subscribe((res: any) => {
           if (res.message) {
-            localStorage.setItem('token', res.token);
             this.messageService.add({
               severity: 'success',
               summary: 'Success',
