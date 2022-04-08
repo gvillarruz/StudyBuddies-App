@@ -17,34 +17,32 @@ p {
     margin-bottom: 142px;
 }
 
-#aboutImages img:nth-of-type(1) {
+.aboutImages img:nth-of-type(1) {
     border-radius: 36px;
     width: 450px;
     height: 231px;
 }
 
-#aboutImages img:nth-of-type(2) {
+.aboutImages img:nth-of-type(2) {
     border-radius: 58px;
     width: 418px;
     height: 220px;
 }
 
-#aboutParent {
+.aboutParent {
+    display: grid;
+    grid-template-columns: 900px 500px;
+    column-gap: 10px;
     background-color:#DCEEF0;
-    width: 50%;
-    height: auto;
 }
 
-#aboutDescription {
+.aboutDescription {
     background-color:#DCEEF0;
     float: left;
     width: 50%
 }
 
-#aboutImages {
+.aboutImages  {
     background-color:#DCEEF0;
-    float: left;
-    width: 50%;
-    height: 640px;
-    margin-bottom:45px;
+    padding: 20px;
 }
