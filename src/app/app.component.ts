@@ -40,7 +40,7 @@ export class AppComponent {
           {
             label: 'Services',
             icon: 'pi pi-fw pi-file',
-            routerLink: 'contact',
+            routerLink: 'services',
           },
           {
             label: 'Register',
