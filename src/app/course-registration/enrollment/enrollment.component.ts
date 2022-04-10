@@ -48,10 +48,7 @@ export class EnrollmentComponent {
     private http: HttpClient
   ) {
     this.http
-      .post(
-        '/api/accountInfo',
-        { token: localStorage.getItem('token') }
-      )
+      .post('/api/accountInfo', { token: localStorage.getItem('token') })
       .subscribe((res: any) => {
         console.log(res);
         res.students.forEach((student) => {
@@ -60,6 +57,12 @@ export class EnrollmentComponent {
             value: student.StudentEmailAddress,
           });
         });
+
+        this.studentOptions = [
+          ...new Map(
+            this.studentOptions.map((item, key) => [item[key], item])
+          ).values(),
+        ];
 
         this.lastName = res.parentLastName;
       });
@@ -74,14 +77,11 @@ export class EnrollmentComponent {
       });
     } else {
       this.http
-        .post(
-          '/api/courseSearch',
-          {
-            grade: this.selectedGrade.value,
-            subject: this.selectedSubject.value,
-            token: localStorage.getItem('token'),
-          }
-        )
+        .post('/api/courseSearch', {
+          grade: this.selectedGrade.value,
+          subject: this.selectedSubject.value,
+          token: localStorage.getItem('token'),
+        })
         .subscribe((data: any) => {
           console.log(data);
 
@@ -109,21 +109,18 @@ export class EnrollmentComponent {
       });
     } else {
       this.http
-        .post(
-          '/api/enrollment',
-          {
-            email: this.selectedStudent.value,
-            Token: localStorage.getItem('token'),
-            course: {
-              serviceType: chosenSubject.TutoringService,
-              subject: chosenSubject.Subject,
-              isOnline: chosenSubject.ServiceForm == 'Online' ? true : false,
-              isGroup: chosenSubject.PackageChosen == 'Group' ? true : false,
-              timings: chosenSubject.AvailableSlots,
-              grade: chosenSubject.Grade,
-            },
-          }
-        )
+        .post('/api/enrollment', {
+          email: this.selectedStudent.value,
+          Token: localStorage.getItem('token'),
+          course: {
+            serviceType: chosenSubject.TutoringService,
+            subject: chosenSubject.Subject,
+            isOnline: chosenSubject.ServiceForm == 'Online' ? true : false,
+            isGroup: chosenSubject.PackageChosen == 'Group' ? true : false,
+            timings: chosenSubject.AvailableSlots,
+            grade: chosenSubject.Grade,
+          },
+        })
         .subscribe((res: any) => {
           if (res.message == 'True') {
             this.messageService.add({
