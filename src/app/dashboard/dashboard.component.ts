@@ -37,6 +37,8 @@ export class DashboardComponent implements OnInit {
             summary: 'Warning',
             detail: 'No data found',
           });
+        } else {
+          this.dashboardStudentData = res.results;
         }
       });
 

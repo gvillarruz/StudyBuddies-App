@@ -69,6 +69,7 @@ export class StudRegBComponent implements OnInit {
           token: localStorage.getItem('token'),
         })
         .subscribe((res: any) => {
+          console.log(res);
           if (res.message) {
             this.messageService.add({
               severity: 'success',

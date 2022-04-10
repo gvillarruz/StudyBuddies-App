@@ -106,7 +106,6 @@ export class VerifyComponent implements OnInit {
       this.http
         .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/pickup', {
           code: this.verifyCode,
-          token: localStorage.getItem('token'),
         })
         .subscribe((data) => {
           console.log(data);

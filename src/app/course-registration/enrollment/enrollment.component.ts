@@ -38,6 +38,11 @@ export class EnrollmentComponent {
 
   results = [];
 
+  studentOptions = [];
+  selectedStudent;
+
+  lastName;
+
   constructor(
     private messageService: MessageService,
     private http: HttpClient
@@ -49,17 +54,19 @@ export class EnrollmentComponent {
       )
       .subscribe((res: any) => {
         console.log(res);
+        res.students.forEach((student) => {
+          this.studentOptions.push({
+            name: student.FirstName,
+            value: student.StudentEmailAddress,
+          });
+        });
+
+        this.lastName = res.parentLastName;
       });
   }
 
   submit() {
-    if (
-      this.isPaid == null ||
-      this.isOnline == null ||
-      this.isGroup == null ||
-      this.selectedGrade == null ||
-      this.selectedSubject == null
-    ) {
+    if (this.selectedGrade == null || this.selectedSubject == null) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
@@ -70,9 +77,6 @@ export class EnrollmentComponent {
         .post(
           'https://cps-888-study-budies-ueaae.ondigitalocean.app/courseSearch',
           {
-            isPaid: this.isPaid,
-            isOnline: this.isOnline,
-            isGroup: !this.isGroup,
             grade: this.selectedGrade.value,
             subject: this.selectedSubject.value,
             token: localStorage.getItem('token'),
@@ -82,17 +86,52 @@ export class EnrollmentComponent {
           console.log(data);
 
           this.results = data.availableCourses;
-
-          // this.messageService.add({
-          //   severity: 'success',
-          //   summary: 'Success',
-          //   detail: 'Enrollment successful',
-          // });
+          if (data.availableCourses.length == 0) {
+            this.messageService.add({
+              severity: 'warn',
+              summary: 'Warning',
+              detail: 'No courses available',
+            });
+          }
         });
     }
   }
 
   register(chosenSubject: any) {
     console.log(chosenSubject);
+    console.log(this.selectedStudent);
+
+    if (this.selectedStudent == null) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Please select a student',
+      });
+    } else {
+      this.http
+        .post(
+          'https://cps-888-study-budies-ueaae.ondigitalocean.app/enrollment',
+          {
+            email: this.selectedStudent.value,
+            Token: localStorage.getItem('token'),
+            course: {
+              serviceType: chosenSubject.TutoringService,
+              subject: chosenSubject.Subject,
+              isOnline: chosenSubject.ServiceForm == 'Online' ? true : false,
+              isGroup: chosenSubject.PackageChosen == 'Group' ? true : false,
+              timings: chosenSubject.AvailableSlots,
+            },
+          }
+        )
+        .subscribe((res: any) => {
+          if (res.message == 'True') {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Enrollment successful',
+            });
+          }
+        });
+    }
   }
 }

@@ -1,6 +1,8 @@
 <h1>Student Course Registration</h1>
 <p-toast position="top-right"></p-toast>
-<div>
+
+
+<!-- <div>
   <label>Do you want the student to enroll for paid tutoring or Drop-Off Sesions?</label>
   <div class="field-radiobutton">
     <p-radioButton name="option" [value]=true [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
@@ -31,7 +33,7 @@
 <div class="field-radiobutton">
     <p-radioButton name="option" [value]=false [(ngModel)]="isGroup" inputId="group"></p-radioButton>
     <label for="group">Group Tutoring</label>
-</div>
+</div> -->
 
 <div>
   <label for="integeronly">Grade</label>
@@ -50,6 +52,12 @@
 
 <ng-container *ngIf="this.results.length != 0;">
   <h2>Results</h2>
+
+  <div>
+    <label>Select Student to Enroll</label>
+    <p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+
   <table>
     <thead>
       <tr>
