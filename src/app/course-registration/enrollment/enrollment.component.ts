@@ -58,12 +58,6 @@ export class EnrollmentComponent {
           });
         });
 
-        this.studentOptions = [
-          ...new Map(
-            this.studentOptions.map((item, key) => [item[key], item])
-          ).values(),
-        ];
-
         this.lastName = res.parentLastName;
       });
   }

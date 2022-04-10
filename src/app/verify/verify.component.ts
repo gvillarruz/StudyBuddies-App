@@ -76,12 +76,6 @@ export class VerifyComponent implements OnInit {
           });
         });
 
-        this.studentOptions = [
-          ...new Map(
-            this.studentOptions.map((item, key) => [item[key], item])
-          ).values(),
-        ];
-
         this.lastName = res.parentLastName;
       });
   }
