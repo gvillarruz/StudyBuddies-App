@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
       });
     } else {
       this.http
-        .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/login', {
+        .post('/api/login', {
           username: this.email,
           password: this.password,
         })

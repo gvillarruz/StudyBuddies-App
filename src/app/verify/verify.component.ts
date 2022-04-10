@@ -66,10 +66,7 @@ export class VerifyComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .post(
-        'https://cps-888-study-budies-ueaae.ondigitalocean.app/accountInfo',
-        { token: localStorage.getItem('token') }
-      )
+      .post('/api/accountInfo', { token: localStorage.getItem('token') })
       .subscribe((res: any) => {
         console.log(res);
         res.students.forEach((student) => {
@@ -92,7 +89,7 @@ export class VerifyComponent implements OnInit {
       });
     } else {
       this.http
-        .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/dropoff', {
+        .post('/api/dropoff', {
           firstName: this.selectedStudent.value,
           lastName: this.lastName,
           date: this.todayString,
@@ -119,7 +116,7 @@ export class VerifyComponent implements OnInit {
       });
     } else {
       this.http
-        .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/pickup', {
+        .post('/api/pickup', {
           code: this.verifyCode,
         })
         .subscribe((data) => {

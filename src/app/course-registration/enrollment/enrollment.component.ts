@@ -49,7 +49,7 @@ export class EnrollmentComponent {
   ) {
     this.http
       .post(
-        'https://cps-888-study-budies-ueaae.ondigitalocean.app/accountInfo',
+        '/api/accountInfo',
         { token: localStorage.getItem('token') }
       )
       .subscribe((res: any) => {
@@ -75,7 +75,7 @@ export class EnrollmentComponent {
     } else {
       this.http
         .post(
-          'https://cps-888-study-budies-ueaae.ondigitalocean.app/courseSearch',
+          '/api/courseSearch',
           {
             grade: this.selectedGrade.value,
             subject: this.selectedSubject.value,
@@ -110,7 +110,7 @@ export class EnrollmentComponent {
     } else {
       this.http
         .post(
-          'https://cps-888-study-budies-ueaae.ondigitalocean.app/enrollment',
+          '/api/enrollment',
           {
             email: this.selectedStudent.value,
             Token: localStorage.getItem('token'),

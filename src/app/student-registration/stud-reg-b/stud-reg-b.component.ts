@@ -58,7 +58,7 @@ export class StudRegBComponent implements OnInit {
       });
     } else {
       this.http
-        .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/student', {
+        .post('/api/student', {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,

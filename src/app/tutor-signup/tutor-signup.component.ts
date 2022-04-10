@@ -59,7 +59,7 @@ export class TutorSignupComponent implements OnInit {
       });
     } else {
       this.http
-        .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/signup', {
+        .post('/api/signup', {
           username: this.email,
           password: this.password,
           firstName: this.firstName,
