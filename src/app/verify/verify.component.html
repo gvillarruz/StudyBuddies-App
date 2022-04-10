@@ -2,18 +2,11 @@
 <ng-container *ngIf="this.accountType == 'parent'; else elseTemplate">
   <h1>Student Drop-Off</h1>
 
-  <span class="p-float-label">
-    <input id="float-input" type="text" pInputText [(ngModel)]="firstName">
-    <label for="float-input">First Name</label>
-</span>
-
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText [(ngModel)]="lastName">
-  <label for="float-input">Last Name</label>
-</span>
-
-
-<p-dropdown [options]="subjectOptions" [(ngModel)]="selectedCourse" placeholder="Select Course" optionLabel="name" [showClear]="true"></p-dropdown>
+  <div>
+    <label>Select Student to Enroll</label>
+    <div></div>
+    <p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
 
 <p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown>
 <div><p-button label="Submit" (onClick)="this.submission()"></p-button></div>

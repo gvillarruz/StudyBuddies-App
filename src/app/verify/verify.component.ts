@@ -40,11 +40,14 @@ export class VerifyComponent implements OnInit {
 
   accountType;
 
-  firstName;
   lastName;
+
   todayString;
   timeChosen;
   parentEmail;
+
+  studentOptions = [];
+  selectedStudent;
 
   constructor(
     private http: HttpClient,
@@ -61,15 +64,27 @@ export class VerifyComponent implements OnInit {
     this.todayString = dd + '/' + mm + '/' + yyyy;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http
+      .post(
+        'https://cps-888-study-budies-ueaae.ondigitalocean.app/accountInfo',
+        { token: localStorage.getItem('token') }
+      )
+      .subscribe((res: any) => {
+        console.log(res);
+        res.students.forEach((student) => {
+          this.studentOptions.push({
+            name: student.FirstName,
+            value: student.FirstName,
+          });
+        });
+
+        this.lastName = res.parentLastName;
+      });
+  }
 
   submission() {
-    if (
-      this.firstName == null ||
-      this.lastName == null ||
-      this.selectedTime == null ||
-      this.selectedCourse == null
-    ) {
+    if (this.selectedTime == null || this.selectedStudent == null) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
@@ -78,7 +93,7 @@ export class VerifyComponent implements OnInit {
     } else {
       this.http
         .post('https://cps-888-study-budies-ueaae.ondigitalocean.app/dropoff', {
-          firstName: this.firstName,
+          firstName: this.selectedStudent.value,
           lastName: this.lastName,
           date: this.todayString,
           time: this.selectedTime.value,
