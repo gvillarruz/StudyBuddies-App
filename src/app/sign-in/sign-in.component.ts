@@ -47,6 +47,7 @@ export class SignInComponent implements OnInit {
           } else {
             localStorage.setItem('token', res.token);
             localStorage.setItem('userType', res.userType);
+            localStorage.setItem('email', this.email);
             this.loginService.loggedIn.next(true);
             this.router.navigate(['/dashboard']);
           }

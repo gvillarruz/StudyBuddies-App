@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./enrollment.component.scss'],
   providers: [MessageService],
 })
-export class EnrollmentComponent implements OnInit {
+export class EnrollmentComponent {
   isPaid;
   isOnline;
   isGroup;
@@ -27,19 +27,31 @@ export class EnrollmentComponent implements OnInit {
     { name: 'Grade 12', value: 12 },
   ];
   subjectOptions = [
-    { name: 'Math', value: 'math' },
-    { name: 'Science', value: 'science' },
-    { name: 'English', value: 'english' },
-    { name: 'History', value: 'history' },
-    { name: 'Geography', value: 'geography' },
-    { name: 'French', value: 'french' },
+    { name: 'Math', value: 'Math' },
+    { name: 'Science', value: 'Science' },
+    { name: 'English', value: 'English' },
+    { name: 'History', value: 'History' },
+    { name: 'Geography', value: 'Geography' },
+    { name: 'French', value: 'French' },
   ];
   selectedSubject;
+
+  results = [];
 
   constructor(
     private messageService: MessageService,
     private http: HttpClient
-  ) {}
+  ) {
+    this.http
+      .post(
+        'https://cps-888-study-budies-ueaae.ondigitalocean.app/accountInfo',
+        { token: localStorage.getItem('token') }
+      )
+      .subscribe((res: any) => {
+        console.log(res);
+      });
+  }
+
   submit() {
     if (
       this.isPaid == null ||
@@ -56,24 +68,31 @@ export class EnrollmentComponent implements OnInit {
     } else {
       this.http
         .post(
-          'https://cps-888-study-budies-ueaae.ondigitalocean.app/enrollment',
+          'https://cps-888-study-budies-ueaae.ondigitalocean.app/courseSearch',
           {
             isPaid: this.isPaid,
             isOnline: this.isOnline,
-            isGroup: this.isGroup,
+            isGroup: !this.isGroup,
             grade: this.selectedGrade.value,
             subject: this.selectedSubject.value,
+            token: localStorage.getItem('token'),
           }
         )
-        .subscribe((data) => {
+        .subscribe((data: any) => {
           console.log(data);
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Enrollment successful',
-          });
+
+          this.results = data.availableCourses;
+
+          // this.messageService.add({
+          //   severity: 'success',
+          //   summary: 'Success',
+          //   detail: 'Enrollment successful',
+          // });
         });
     }
   }
-  ngOnInit(): void {}
+
+  register(chosenSubject: any) {
+    console.log(chosenSubject);
+  }
 }

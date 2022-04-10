@@ -19,6 +19,7 @@ export class LoginService {
   logoutUser() {
     localStorage.removeItem('token');
     localStorage.removeItem('userType');
+    localStorage.removeItem('email');
     this.router.navigate(['/signin']);
     this.loggedIn.next(false);
   }

@@ -66,6 +66,7 @@ export class StudRegBComponent implements OnInit {
           gender: this.gender,
           allergies: this.allergies,
           grade: this.selectedGrade.value,
+          token: localStorage.getItem('token'),
         })
         .subscribe((res: any) => {
           if (res.message) {

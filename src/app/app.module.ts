@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { EnrolmentComponent } from './enrolment/enrolment.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -34,11 +33,11 @@ import { EnrollmentComponent } from './course-registration/enrollment/enrollment
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
 import { ServicesComponent } from './services/services.component';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EnrolmentComponent,
     ContactComponent,
     SignInComponent,
     StudentRegistrationComponent,
@@ -71,6 +70,7 @@ import { ServicesComponent } from './services/services.component';
     DividerModule,
     FileUploadModule,
     HttpClientModule,
+    TableModule,
   ],
   providers: [
     {

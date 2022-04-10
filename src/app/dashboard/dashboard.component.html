@@ -1,3 +1,36 @@
 <h1>Dashboard</h1>
-<div><h2 >Welcome, {{(this.username)}}!</h2></div>
+<p-toast position="top-right"></p-toast>
+
+
+
+<ng-container *ngIf="this.userType == 'parent'; else elseTemplate">
+  <div><h2 >Welcome, {{(this.username)}}!</h2></div>
+
+ <table>
+  <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Subject</th>
+        <th>Service Type</th>
+        <th>Package Type</th>
+        <th>Time slot</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of dashboardStudentData">
+        <td>{{data.FirstName}}</td>
+        <td>{{data.LastName}}</td>
+        <td>{{data.Subject}}</td>
+        <td>{{data.ServiceForm}}</td>
+        <td>{{data.PackageChosen}}</td>
+        <td>{{data.AvailableTimeSlots}}</td>
+    </tr>
+</tbody>
+
+</table>
+</ng-container>
+<ng-template #elseTemplate>
+Hi tutor
+</ng-template>
 

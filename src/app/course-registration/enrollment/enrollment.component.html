@@ -48,3 +48,35 @@
 
 </ng-container>
 
+<ng-container *ngIf="this.results.length != 0;">
+  <h2>Results</h2>
+  <table>
+    <thead>
+      <tr>
+          <th>Class ID</th>
+          <th>Package Chosen</th>
+          <th>Class Type</th>
+          <th>Service Type</th>
+          <th>Subject</th>
+          <th>Slot</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let data of results">
+          <td>{{data.ClassesAvailable_ID}}</td>
+          <td>{{data.PackageChosen}}</td>
+          <td>{{data.ServiceForm}}</td>
+          <td>{{data.TutoringService}}</td>
+          <td>{{data.Subject}}</td>
+          <td>{{data.AvailableSlots}}</td>
+          <p-button label="Register" (onClick)="this.register(data)"></p-button>
+      </tr>
+  </tbody>
+
+  </table>
+</ng-container>
+
+
+
+
+
