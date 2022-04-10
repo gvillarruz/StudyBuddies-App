@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { ServicesComponent } from './services/services.component.spec';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AboutComponent } from './about/about.component';
