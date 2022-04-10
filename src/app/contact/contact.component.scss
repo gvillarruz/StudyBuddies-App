@@ -2,5 +2,67 @@ h1 {
     color: #47525e;
     font-family: "Abril Fatface";
     font-size: 65px;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.headerDiv p:nth-of-type(1) {
+    color: #8190A5;
+    font-family: "Lato";
+    font-size: 23px;
+    width: 731px;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.phoneNumberIcon img:nth-of-type(1) {
+    color: #343F48;
+    width: 64px;
+    height: 64px;
+    margin-left: 100px;
+}
+
+.phoneNumberLinkParent {
+    display: flex;
     text-align: center;
+}
+
+.phoneNumberIcon  {
+    display: inline-block;
+}
+
+.phoneNumberText {
+    display: inline-block;
+    color: #47525E;
+    font-family: "Lato";
+    font-size: 23px;
+    width: 731px;
+    text-align: left;
+    margin-left: 16px;
+}
+
+.emailIcon img:nth-of-type(1) {
+    color: #343F48;
+    width: 64px;
+    height: 64px;
+    margin-left: 100px;
+}
+
+.emailLinkParent {
+    display: flex;
+    text-align: center;
+}
+
+.emailIcon  {
+    display: inline-block;
+}
+
+.emailText {
+    display: inline-block;
+    color: #47525E;
+    font-family: "Lato";
+    font-size: 23px;
+    width: 731px;
+    text-align: left;
+    margin-left: 16px;
 }
