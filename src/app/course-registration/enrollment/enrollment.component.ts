@@ -120,6 +120,7 @@ export class EnrollmentComponent {
               isOnline: chosenSubject.ServiceForm == 'Online' ? true : false,
               isGroup: chosenSubject.PackageChosen == 'Group' ? true : false,
               timings: chosenSubject.AvailableSlots,
+              grade: chosenSubject.Grade,
             },
           }
         )
