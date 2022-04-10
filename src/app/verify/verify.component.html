@@ -1,29 +1,24 @@
-<h1>Student Pick-Up/Drop-Off Verification</h1>
+<p-toast position="top-right"></p-toast>
+<ng-container *ngIf="this.accountType == 'parent'; else elseTemplate">
+  <h1>Student Drop-Off</h1>
 
-<div class="field-radiobutton">
-  <p-radioButton name="pickup" value="pickup" [(ngModel)]="selected" inputId="pickup"></p-radioButton>
-  <label for="pickup">Pick-Up</label>
-</div>
-<div class="field-radiobutton">
-  <p-radioButton name="dropoff" value="dropoff" [(ngModel)]="selected" inputId="dropoff"></p-radioButton>
-  <label for="dropoff">Drop-Off</label>
-</div>
+  <div>
+    <label>Select Student to Enroll</label>
+    <div></div>
+    <p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
 
-<ng-container *ngIf="this.selected === 'pickup'; else elseTemplate">
-  <div><input type="text" pInputText [(ngModel)]="verifyCode"></div>
-
-  <p-button label="Verify"></p-button>
+<p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown>
+<div><p-button label="Submit" (onClick)="this.submission()"></p-button></div>
 
 </ng-container>
 <ng-template #elseTemplate>
-  <div><input type="text" pInputText [(ngModel)]="verifyCode"></div>
-  <div><input type="text" pInputText [(ngModel)]="verifyCode"></div>
+  <h1>Student Pick-Up Verification</h1>
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="verifyCode">
+    <label for="float-input">Unique Code</label>
+</span>
 
-<p-dropdown [options]="courses" [(ngModel)]="selectedCourse" placeholder="Select Course" optionLabel="name" [showClear]="true"></p-dropdown>
-
-<p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown>
-<div><p-button label="Submit"></p-button></div>
-
+  <p-button label="Verify" (onClick)="this.verification()"></p-button>
 </ng-template>
-
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -9,26 +10,48 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class SignInComponent implements OnInit {
-  username;
+  email;
   password;
 
   constructor(
     public loginService: LoginService,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {}
 
   signIn() {
-    this.loginService.loggedIn.next(true);
-
-    if (false) {
-      this.router.navigate(['/dashboard']);
-    } else if (true) {
-      this.router.navigate(['/student-registration']);
+    if (this.email == null || this.password == null) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'All fields are required',
+      });
     } else {
-      this.router.navigate(['/tutor-registration']);
+      this.http
+        .post('/api/login', {
+          username: this.email,
+          password: this.password,
+        })
+        .subscribe((res: any) => {
+          console.log(res);
+
+          if (res.message == false) {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Invalid username or password',
+            });
+          } else {
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('userType', res.userType);
+            localStorage.setItem('email', this.email);
+            this.loginService.loggedIn.next(true);
+            this.router.navigate(['/dashboard']);
+          }
+        });
     }
   }
 }

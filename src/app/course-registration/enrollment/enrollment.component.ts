@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-enrollment',
   templateUrl: './enrollment.component.html',
   styleUrls: ['./enrollment.component.scss'],
+  providers: [MessageService],
 })
-export class EnrollmentComponent implements OnInit {
+export class EnrollmentComponent {
   isPaid;
   isOnline;
   isGroup;
@@ -25,16 +27,103 @@ export class EnrollmentComponent implements OnInit {
     { name: 'Grade 12', value: 12 },
   ];
   subjectOptions = [
-    { name: 'Math', value: 'math' },
-    { name: 'Science', value: 'science' },
-    { name: 'English', value: 'english' },
-    { name: 'History', value: 'history' },
-    { name: 'Geography', value: 'geography' },
-    { name: 'French', value: 'french' },
+    { name: 'Math', value: 'Math' },
+    { name: 'Science', value: 'Science' },
+    { name: 'English', value: 'English' },
+    { name: 'History', value: 'History' },
+    { name: 'Geography', value: 'Geography' },
+    { name: 'French', value: 'French' },
   ];
   selectedSubject;
 
-  constructor() {}
+  results = [];
 
-  ngOnInit(): void {}
+  studentOptions = [];
+  selectedStudent;
+
+  lastName;
+
+  constructor(
+    private messageService: MessageService,
+    private http: HttpClient
+  ) {
+    this.http
+      .post('/api/accountInfo', { token: localStorage.getItem('token') })
+      .subscribe((res: any) => {
+        console.log(res);
+        res.students.forEach((student) => {
+          this.studentOptions.push({
+            name: student.FirstName,
+            value: student.StudentEmailAddress,
+          });
+        });
+
+        this.lastName = res.parentLastName;
+      });
+  }
+
+  submit() {
+    if (this.selectedGrade == null || this.selectedSubject == null) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'All fields are required',
+      });
+    } else {
+      this.http
+        .post('/api/courseSearch', {
+          grade: this.selectedGrade.value,
+          subject: this.selectedSubject.value,
+          token: localStorage.getItem('token'),
+        })
+        .subscribe((data: any) => {
+          console.log(data);
+
+          this.results = data.availableCourses;
+          if (data.availableCourses.length == 0) {
+            this.messageService.add({
+              severity: 'warn',
+              summary: 'Warning',
+              detail: 'No courses available',
+            });
+          }
+        });
+    }
+  }
+
+  register(chosenSubject: any) {
+    console.log(chosenSubject);
+    console.log(this.selectedStudent);
+
+    if (this.selectedStudent == null) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Please select a student',
+      });
+    } else {
+      this.http
+        .post('/api/enrollment', {
+          email: this.selectedStudent.value,
+          Token: localStorage.getItem('token'),
+          course: {
+            serviceType: chosenSubject.TutoringService,
+            subject: chosenSubject.Subject,
+            isOnline: chosenSubject.ServiceForm == 'Online' ? true : false,
+            isGroup: chosenSubject.PackageChosen == 'Group' ? true : false,
+            timings: chosenSubject.AvailableSlots,
+            grade: chosenSubject.Grade,
+          },
+        })
+        .subscribe((res: any) => {
+          if (res.message == 'True') {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Enrollment successful',
+            });
+          }
+        });
+    }
+  }
 }

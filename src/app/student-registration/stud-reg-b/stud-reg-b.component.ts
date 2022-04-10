@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-stud-reg-b',
   templateUrl: './stud-reg-b.component.html',
   styleUrls: ['./stud-reg-b.component.scss'],
+  providers: [MessageService],
 })
 export class StudRegBComponent implements OnInit {
   firstName;
@@ -29,11 +32,60 @@ export class StudRegBComponent implements OnInit {
   ];
   selectedGrade;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {}
 
   submitStudent() {
-    this.router.navigate(['/dashboard']);
+    if (
+      this.firstName == null ||
+      this.lastName == null ||
+      this.email == null ||
+      this.birthday == null ||
+      this.gender == null ||
+      this.allergies == null ||
+      this.selectedGrade.value == null
+    ) {
+      console.log('TERSTE');
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'All fields are required',
+      });
+    } else {
+      this.http
+        .post('/api/student', {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          birthdate: this.birthday,
+          gender: this.gender,
+          allergies: this.allergies,
+          grade: this.selectedGrade.value,
+          token: localStorage.getItem('token'),
+        })
+        .subscribe((res: any) => {
+          console.log(res);
+          if (res.message) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Student added successfully',
+            });
+          } else {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'An error has occured',
+            });
+          }
+        });
+    }
+
+    //this.router.navigate(['/dashboard']);
   }
 }

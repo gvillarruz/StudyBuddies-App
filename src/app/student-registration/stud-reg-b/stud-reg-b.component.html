@@ -1,5 +1,5 @@
 <h1>Student Registration</h1>
-
+<p-toast position="top-right"></p-toast>
 <div>
   <label for="firstName">First Name</label>
   <input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
@@ -34,3 +34,6 @@
   <p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown>
 </div>
   <p-button label="Next" (click)="this.submitStudent()"></p-button>
+
+
+

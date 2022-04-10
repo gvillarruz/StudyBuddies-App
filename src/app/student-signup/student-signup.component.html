@@ -1,8 +1,7 @@
-<body style="background-color:#DCEEF0">
-<h1>Parent Sign Up</h1>
+<h1>Guardian Information Registration</h1>
 <p-toast position="top-right"></p-toast>
-<div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="username">
-  <label for="float-input">Username</label></div>
+<div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="email">
+  <label for="float-input">Email</label></div>
 
 <div>
   <p-password [(ngModel)]="password" [toggleMask]="true">
@@ -21,6 +20,41 @@
     </ng-template>
 </p-password>
 </div>
+
+
+<div class="container">
+  <div >
+    <label for="integeronly">First Name</label></div>
+    <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
+
+  <div>
+    <label for="integeronly">Last Name</label>
+    <input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
+  <div>
+    <label for="integeronly">Phone Number</label>
+    <input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
+  <div>
+    <label for="integeronly">Home Address</label>
+    <input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
+    <div>
+      <label for="integeronly">Postal Code</label>
+      <input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
+  <div>
+    <label for="integeronly">City</label>
+    <input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
+  <div>
+    <label for="integeronly">Province</label>
+    <input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
+  <div>
+    <label for="integeronly">Relation to Student</label>
+    <input type="text" pInputText [(ngModel)]="relation" inputId="relation"></div>
+
+    <!-- <p-button label="Next" (click)="this.submitParent()"></p-button> -->
+
+
+</div>
+
+
 
 <div><p-button label="Submit" (click)="this.submit()"></p-button></div>
 </body>

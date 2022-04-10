@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://cps-888-study-budies-ueaae.ondigitalocean.app",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
