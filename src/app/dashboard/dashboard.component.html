@@ -1,42 +1,60 @@
 <body style="background-color:#DCEEF0; padding: 20px;">
     <div class="whiteBg">
-        <div class="headerGroup">
-            <h1>Dashboard</h1>
-            <img src="assets/groupPic.png">
-        </div>
+        <!--<div class="mainHeaderGroup" style="display:none">
+            <div><img src="assets/groupPic.png"></div>
+            <div style="display:inline-block"><p>Dashboard</p></div>
+        </div>-->
 
         <p-toast position="top-right"></p-toast>
 
         <ng-container *ngIf="this.userType == 'parent'; else elseTemplate">
-            <h2 >Welcome, {{(this.username)}}!</h2>
+            <div class="parentHeaderGroup">
+                <div><img src="assets/dashboardUserPic.png"></div>
+                <div><p>Dashboard</p></div>
+            </div>
+            <div style="
+            color:#47525E;
+            font-family: 'Lato';
+            font-size: 38px;
+            font-weight:bold;
+            text-align: left;
+            width: 200px;
+            height: auto;
+            border-bottom: 4px solid #969FAA;">
+                <p>Welcome, {{(this.username)}}!</p>
+            </div>
 
-            <div class="scheduledTableBg">
-                <h3>Scheduled tutoring sessions of my child(ren):</h3>
+            <div class="scheduledTableBg" style="align-items: center; margin: auto;">
+                <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
+                    <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
+                        <h3>Scheduled tutoring sessions of my child(ren):</h3>
 
-                <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Subject</th>
-                        <th>Grade</th>
-                        <th>Service Type</th>
-                        <th>Package Type</th>
-                        <th>Time slot</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of dashboardStudentData">
-                        <td>{{data.FirstName}}</td>
-                        <td>{{data.LastName}}</td>
-                        <td>{{data.Subject}}</td>
-                        <td>{{data.Grade}}</td>
-                        <td>{{data.ServiceForm}}</td>
-                        <td>{{data.PackageChosen}}</td>
-                        <td>{{data.AvailableTimeSlots}}</td>
-                    </tr>
-                </tbody>
-                </table>
+                        <table style="border:3px solid #47525E; margin-left: 50px; margin-bottom: 40px;">
+                        <thead>
+                            <tr>
+                                <th style="width:80px; padding-right: 10px;">First Name</th>
+                                <th style="width:80px; padding-right: 10px;">Last Name</th>
+                                <th style="width:80px; padding-right: 10px;">Subject</th>
+                                <th style="width:80px; padding-right: 10px;">Grade</th>
+                                <th style="width:80px; padding-right: 10px;">Service Type</th>
+                                <th style="width:80px; padding-right: 10px;">Package Type</th>
+                                <th style="width:80px; padding-right: 10px;">Time slot</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            <tr *ngFor="let data of dashboardStudentData">
+                                <td style="width:80px; padding-right: 10px;">{{data.FirstName}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.LastName}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.ServiceForm}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.AvailableTimeSlots}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </ng-container>
         <ng-template #elseTemplate>
@@ -60,6 +78,21 @@
               </tr>
           </tbody>
           </table>
+            <div class="tutorHeaderGroup">
+                <div><img src="assets/dashboardUserPic.png"></div>
+                <div><p>Dashboard</p></div>
+            </div>
+            <div>
+                <p style="
+                color:#47525E;
+                font-family: 'Lato';
+                font-size: 38px;
+                font-weight:bold;
+                text-align: left;
+                width: 200px;
+                height: auto;
+                border-bottom: 4px solid #969FAA;">Welcome, tutor!</p>
+            </div>
         </ng-template>
     </div>
 </body>

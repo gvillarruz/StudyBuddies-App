@@ -38,6 +38,10 @@ export class AppComponent {
       if (type == 'parent') {
         this.items = [
           {
+            label: 'Study Buddies',
+          },
+          {
+
             label: 'Dashboard',
             icon: 'pi pi-fw pi-file',
             routerLink: 'dashboard',
@@ -61,6 +65,9 @@ export class AppComponent {
       } else if (type == 'tutor') {
         this.items = [
           {
+            label: 'Study Buddies',
+          },
+          {
             label: 'Dashboard',
             icon: 'pi pi-fw pi-file',
             routerLink: 'dashboard',
@@ -74,7 +81,14 @@ export class AppComponent {
       }
     } else {
       this.items = [
-        { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+        {
+          label: 'Study Buddies',
+        },
+        { 
+          label: 'Home', 
+          icon: 'pi pi-fw pi-home', 
+          routerLink: 'home' 
+        },
         {
           label: 'Services',
           icon: 'pi pi-fw pi-file',
@@ -102,6 +116,11 @@ export class AppComponent {
         if (type == 'parent') {
           this.items = [
             {
+              label: 'Study Buddies',
+              style: 'background-color: #DCEEF0'
+              
+            },
+            {
               label: 'Dashboard',
               icon: 'pi pi-fw pi-file',
               routerLink: 'dashboard',
@@ -125,6 +144,9 @@ export class AppComponent {
         } else if (type == 'tutor') {
           this.items = [
             {
+              label: 'Study Buddies',
+            },
+            {
               label: 'Dashboard',
               icon: 'pi pi-fw pi-file',
               routerLink: 'dashboard',
@@ -138,7 +160,14 @@ export class AppComponent {
         }
       } else {
         this.items = [
-          { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+          {
+            label: 'Study Buddies',
+          },
+          { 
+            label: 'Home', 
+            icon: 'pi pi-fw pi-home', 
+            routerLink: 'home' 
+          },
           {
             label: 'Services',
             icon: 'pi pi-fw pi-file',
