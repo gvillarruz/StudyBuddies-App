@@ -40,7 +40,26 @@
             </div>
         </ng-container>
         <ng-template #elseTemplate>
-        Hi tutor
+          <h2 >Welcome, {{(this.username)}}!</h2>
+        <table>
+          <thead>
+              <tr>
+                  <th>Service Type</th>
+                  <th>Subject</th>
+                  <th>Delivery Method</th>
+                  <th>Time slot</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of dashboardStudentData">
+                  <td>{{data.TutoringService}}</td>
+                  <!-- <td>{{data.Grade}}</td> -->
+                  <td>{{data.Subject}}</td>
+                  <td>{{data.PackageChosen}}</td>
+                  <td>{{data.AvailableSlots}}</td>
+              </tr>
+          </tbody>
+          </table>
         </ng-template>
     </div>
 </body>

@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   name;
 
   dashboardStudentData = [];
+  dashboardTutorData = [];
 
   userType = localStorage.getItem('userType');
 
@@ -50,6 +51,7 @@ export class DashboardComponent implements OnInit {
           console.log(res);
         });
     } else {
+
       this.http
         .post('/api/dashboard', {
           Token: localStorage.getItem('token'),
@@ -57,6 +59,7 @@ export class DashboardComponent implements OnInit {
         })
         .subscribe((res: any) => {
           console.log(res);
+          this.dashboardTutorData = res.scheduledSessions;
         });
     }
   }
