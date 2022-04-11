@@ -1,7 +1,7 @@
 <body style="background-color:#DCEEF0; padding: 80px;">
   <div class="whiteBg">
     <h1>Student Course Registration</h1>
-    <p style="font-family: 'Lato'; font-size: 18px; color: crimson; text-align: center;">Enter the grade & subject to search for avaialable tutoring sessions.</p>
+    <p style="font-family: 'Lato'; font-size: 18px; color: crimson; text-align: center;">Enter the grade & subject to search for available tutoring sessions.</p>
     <p-toast position="top-right"></p-toast>
 
     <div class="gradeField">
@@ -21,23 +21,23 @@
     <ng-container *ngIf="true;"></ng-container>
     
     <ng-container *ngIf="this.results.length != 0;">
-      <h2 style="font-family: 'Lato'; font-size: 20px; ;">Results</h2>
+      <h2 style="font-family: 'Lato'; font-size: 25px; color:#47525E;">Results</h2>
     
       <div class="studentEnrollField">
-        <div><label>Select Student to Enroll</label></div>
-        <div><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
+        <div style="text-align: right;"><label>Select Student to Enroll:</label></div>
+        <div style="margin-bottom: 20px;"><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
       </div>
     
-      <table class="resultsTable">
+      <table class="resultsTable" style="justify-content: center;">
         <thead>
-          <tr>
-              <th>Class ID</th>
-              <th>Package Chosen</th>
-              <th>Class Type</th>
-              <th>Service Type</th>
-              <th>Subject</th>
-              <th>Grade</th>
-              <th>Slot</th>
+          <tr style="width:auto">
+              <th style="width:60px">Class ID</th>
+              <th style="width:60px">Package Chosen</th>
+              <th style="width:60px">Class Type</th>
+              <th style="width:60px">Service Type</th>
+              <th style="width:60px">Subject</th>
+              <th style="width:60px">Grade</th>
+              <th style="width:60px">Slot</th>
           </tr>
       </thead>
       <tbody>

@@ -11,6 +11,7 @@ h1 {
     background-color: #FFFFFF;
     width: auto;
     height: auto;
+    padding: 20px;
 }
 
 .gradeField {
@@ -43,6 +44,17 @@ h1 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 40px;
+}
+
+.studentEnrollField {
+    align-items: center;
+    justify-content: left;
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #47525E;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 10px;
 }
 
 .resultsTable {
