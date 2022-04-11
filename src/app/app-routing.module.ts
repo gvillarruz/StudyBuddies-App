@@ -21,7 +21,11 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'student-signup', component: StudentSignupComponent },
   { path: 'tutor-signup', component: TutorSignupComponent },
-  { path: 'student-registration', component: StudentRegistrationComponent },
+  {
+    path: 'student-registration',
+    component: StudentRegistrationComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'about', component: AboutComponent },
