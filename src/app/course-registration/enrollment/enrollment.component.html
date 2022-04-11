@@ -1,5 +1,62 @@
-<h1>Student Course Registration</h1>
-<p-toast position="top-right"></p-toast>
+<body style="background-color:#DCEEF0; padding: 80px;">
+  <div class="whiteBg">
+    <h1>Student Course Registration</h1>
+    <p style="font-family: 'Lato'; font-size: 18px; color: crimson; text-align: center;">Enter the grade & subject to search for avaialable tutoring sessions.</p>
+    <p-toast position="top-right"></p-toast>
+
+    <div class="gradeField">
+      <div style="text-align: right;"><label for="integeronly">Grade</label></div>
+      <div><p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown></div>
+    </div>
+    
+    <div class="subjectField">
+      <div style="text-align: right;"><label for="integeronly">Subject</label></div>
+      <div><p-dropdown [options]="subjectOptions" [(ngModel)]="selectedSubject" placeholder="Select a Subject" optionLabel="name" [showClear]="true"></p-dropdown></div>
+    </div>
+    
+    <div class="submitButton">
+      <p-button label="Submit" (onClick)="this.submit()"></p-button>
+    </div>
+
+    <ng-container *ngIf="true;"></ng-container>
+    
+    <ng-container *ngIf="this.results.length != 0;">
+      <h2 style="font-family: 'Lato'; font-size: 20px; ;">Results</h2>
+    
+      <div class="studentEnrollField">
+        <div><label>Select Student to Enroll</label></div>
+        <div><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
+      </div>
+    
+      <table class="resultsTable">
+        <thead>
+          <tr>
+              <th>Class ID</th>
+              <th>Package Chosen</th>
+              <th>Class Type</th>
+              <th>Service Type</th>
+              <th>Subject</th>
+              <th>Grade</th>
+              <th>Slot</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let data of results">
+              <td>{{data.ClassesAvailable_ID}}</td>
+              <td>{{data.PackageChosen}}</td>
+              <td>{{data.ServiceForm}}</td>
+              <td>{{data.TutoringService}}</td>
+              <td>{{data.Subject}}</td>
+              <td>{{data.Grade}}</td>
+              <td>{{data.AvailableSlots}}</td>
+              <p-button label="Register" (onClick)="this.register(data)"></p-button>
+          </tr>
+      </tbody>
+    
+      </table>
+    </ng-container>
+  </div>
+</body>
 
 
 <!-- <div>
@@ -35,56 +92,7 @@
     <label for="group">Group Tutoring</label>
 </div> -->
 
-<div>
-  <label for="integeronly">Grade</label>
-  <p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown>
-</div>
 
-<div>
-  <label for="integeronly">Subject</label>
-  <p-dropdown [options]="subjectOptions" [(ngModel)]="selectedSubject" placeholder="Select a Subject" optionLabel="name" [showClear]="true"></p-dropdown>
-</div>
-
-<div><p-button label="Submit" (onClick)="this.submit()"></p-button></div>
-<ng-container *ngIf="true;">
-
-</ng-container>
-
-<ng-container *ngIf="this.results.length != 0;">
-  <h2>Results</h2>
-
-  <div>
-    <label>Select Student to Enroll</label>
-    <p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-          <th>Class ID</th>
-          <th>Package Chosen</th>
-          <th>Class Type</th>
-          <th>Service Type</th>
-          <th>Subject</th>
-          <th>Grade</th>
-          <th>Slot</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let data of results">
-          <td>{{data.ClassesAvailable_ID}}</td>
-          <td>{{data.PackageChosen}}</td>
-          <td>{{data.ServiceForm}}</td>
-          <td>{{data.TutoringService}}</td>
-          <td>{{data.Subject}}</td>
-          <td>{{data.Grade}}</td>
-          <td>{{data.AvailableSlots}}</td>
-          <p-button label="Register" (onClick)="this.register(data)"></p-button>
-      </tr>
-  </tbody>
-
-  </table>
-</ng-container>
 
 
 

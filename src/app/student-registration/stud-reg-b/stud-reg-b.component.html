@@ -1,39 +1,55 @@
-<h1>Student Registration</h1>
-<p-toast position="top-right"></p-toast>
-<div>
-  <label for="firstName">First Name</label>
-  <input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
-<div>
-  <label for="lastName">Last Name</label>
-  <input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
-<div>
-  <label for="email">Email Address</label>
-  <input type="text" pInputText [(ngModel)]="email" inputId="email"></div>
-<div>
-  <label for="birthday">Birth Date</label>
-    <p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar>
-<div>
-  <label>Gender</label>
-  <div class="field-radiobutton">
-    <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
-    <label for="gender1">Male</label>
-</div>
-<div class="field-radiobutton">
-    <p-radioButton name="sex" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
-    <label for="gender2">Female</label>
-</div>
-<div class="field-radiobutton">
-    <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
-    <label for="gender3">Other</label>
-</div>
-<div>
-  <label for="integeronly">Allergies</label>
-  <input type="text" pInputText [(ngModel)]="allergies" inputId="province"></div>
-<div>
-  <label for="integeronly">Grade</label>
-  <p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown>
-</div>
-  <p-button label="Next" (click)="this.submitStudent()"></p-button>
+<body style="background-color:#DCEEF0; padding: 80px;">
+  <div class="whiteBg">
+    <h1>Student Registration</h1>
+    <p style="font-family: 'Lato'; font-size: 18px; color: crimson; text-align: center;">To register the student for one of our tutoring services, please fill out all the fields below.</p>
+    <p-toast position="top-right"></p-toast>
 
+    <div class="firstNameField">
+      <div><label for="firstName">First Name</label></div>
+      <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
+    </div>
 
+    <div class="lastNameField">
+      <div><label for="lastName">Last Name</label></div>
+      <div><input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
+    </div>
 
+    <div class="emailAddressField">
+      <div><label for="email">Email Address</label></div>
+      <div><input type="text" pInputText [(ngModel)]="email" inputId="email"></div>
+    </div>
+
+    <div class="birthdayField">
+      <div><label for="birthday">Birth Date</label></div>
+      <div><p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar></div>
+    </div>
+
+    <div class="genderField">
+      <div style="text-align: right"><label>Gender</label></div>
+      <div class="field-radiobutton">
+        <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
+        <label for="gender1" style="padding-left: 5px; padding-right: 10px;">Male</label>
+      
+        <p-radioButton name="sex" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
+        <label for="gender2" style="padding-left: 5px; padding-right: 10px;">Female</label>
+      
+        <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
+        <label for="gender3" style="padding-left: 5px; padding-right: 10px;">Other</label>
+      </div>
+    </div>
+
+    <div class="provinceField">
+      <div><label for="integeronly">Allergies (if any)</label></div>
+      <div><input type="text" pInputText [(ngModel)]="allergies" inputId="province"></div>
+    </div>
+
+    <div class="gradeField">
+      <div style="text-align: right"><label for="integeronly">Grade</label></div>
+      <div style="text-align: left"><p-dropdown [options]="gradeOptions" [(ngModel)]="selectedGrade" placeholder="Select a Grade" optionLabel="name" [showClear]="true"></p-dropdown></div>
+    </div>
+
+    <div class="submitButton">
+      <p-button label="Next" (click)="this.submitStudent()"></p-button>
+    </div>
+  </div>
+</body>

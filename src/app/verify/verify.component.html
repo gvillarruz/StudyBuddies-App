@@ -1,24 +1,29 @@
-<p-toast position="top-right"></p-toast>
-<ng-container *ngIf="this.accountType == 'parent'; else elseTemplate">
-  <h1>Student Drop-Off</h1>
+<body style="background-color:#DCEEF0; padding: 80px;">
+  <div class="whiteBg">
+    <p-toast position="top-right"></p-toast>
+    <ng-container *ngIf="this.accountType == 'parent'; else elseTemplate">
+      <h1>Student Drop-Off</h1>
+      <div class="studentSelectionField">
+        <div style="text-align: right;"><label>Select Student to Enroll</label></div>
+        <div><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
+      </div>
+      
+      <div class="timeSelectionField">
+        <div style="text-align: right;"><label>Select Time to Enroll</label></div>
+        <div><p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown></div>
+      </div>
 
-  <div>
-    <label>Select Student to Enroll</label>
-    <div></div>
-    <p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown>
+      <div class="submitButton"><p-button label="Submit" (onClick)="this.submission()"></p-button></div>
+
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h1>Student Pick-Up Verification</h1>
+      <div class="registrationCodeField">
+        <div><input id="float-input" type="text" pInputText [(ngModel)]="verifyCode"></div>
+        <div><label for="float-input">Unique Code</label></div>
+      </div>
+
+      <div class="verifyButton"><p-button label="Verify" (onClick)="this.verification()"></p-button></div>
+    </ng-template>
   </div>
-
-<p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown>
-<div><p-button label="Submit" (onClick)="this.submission()"></p-button></div>
-
-</ng-container>
-<ng-template #elseTemplate>
-  <h1>Student Pick-Up Verification</h1>
-  <span class="p-float-label">
-    <input id="float-input" type="text" pInputText [(ngModel)]="verifyCode">
-    <label for="float-input">Unique Code</label>
-</span>
-
-  <p-button label="Verify" (onClick)="this.verification()"></p-button>
-</ng-template>
-
+</body>

@@ -1,0 +1,66 @@
+h1 {
+    font-family: 'Abril Fatface'; 
+    font-size: 40px; 
+    text-align: center; 
+    padding-top: 40px;
+    color: #47525E;
+}
+
+.whiteBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: auto;
+    height: auto;
+}
+
+.studentSelectionField {
+    align-items: center;
+    position: relative;
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #47525E;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 10px;
+    padding: 10px;
+    margin-left: 350px;
+}
+
+.timeSelectionField {
+    align-items: center;
+    position: relative;
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #47525E;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 10px;
+    padding: 10px;
+    margin-left: 350px;
+}
+
+.registrationCodeField {
+    text-align: right;
+    align-items: center;
+    position: relative;
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #47525E;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 10px;
+    padding: 10px;
+    margin-left: 350px;
+}
+
+.submitButton {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.verifyButton {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}

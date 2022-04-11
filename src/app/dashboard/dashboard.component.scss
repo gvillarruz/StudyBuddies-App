@@ -1,0 +1,49 @@
+h1 {
+    color: #47525E;
+    font-family: 'Abril Fatface';
+    font-size: 64px;
+    text-align: left;
+}
+
+h2 {
+    color:#47525E;
+    font-family: 'Lato';
+    font-size: 38px;
+    text-align: left;
+    width: 200px;
+    height: auto;
+}
+
+h3 {
+    color:#47525E;
+    font-family: 'Lato';
+    font-size: 36px;
+    text-align: left;
+}
+
+.whiteBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: auto;
+    height: auto;
+    padding: 20px;
+}
+
+.headerGroup {
+    position: relative;
+    align-items: left;
+    text-align:  left;
+}
+
+.headerGroup img:nth-of-type(1) {
+    width: 96px;
+    height: 96px;
+}
+
+.scheduledTableBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: 850px;
+    height: auto;
+    padding: 10px;
+}
