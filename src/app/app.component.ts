@@ -38,7 +38,7 @@ export class AppComponent {
       if (type == 'parent') {
         this.items = [
           {
-            label: 'Study Buddies'
+            label: 'Study Buddies',
           },
           {
 
