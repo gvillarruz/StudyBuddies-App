@@ -96,13 +96,21 @@ export class VerifyComponent implements OnInit {
           time: this.selectedTime.value,
           parentEmail: localStorage.getItem('email'),
         })
-        .subscribe((data) => {
+        .subscribe((data: any) => {
           console.log(data);
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
-            detail: 'Enrollment successful',
-          });
+          if (data.code != null) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'The code to pickup your child is ' + data.code,
+            });
+          } else {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Invalid',
+            });
+          }
         });
     }
   }
@@ -120,7 +128,19 @@ export class VerifyComponent implements OnInit {
           code: this.verifyCode,
         })
         .subscribe((data) => {
-          console.log(data);
+          if (data) {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Code is valid',
+            });
+          } else {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Invalid code',
+            });
+          }
         });
     }
   }
