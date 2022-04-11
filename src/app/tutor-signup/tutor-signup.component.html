@@ -1,138 +1,140 @@
-<body style="background-color: #DCEEF0;">
-  <h1 style="text-align: center; padding-top: 40px;">Tutor Registration</h1>
-  <p style="color: crimson; text-align: center;">To apply and become a tutor, create a tutor account before applying for student courses to teach. Please fill out all the fields below.</p>
+<body style="background-color: #DCEEF0; padding: 80px">
+  <div class="whiteBg">
+    <h1 style="text-align: center; padding-top: 40px;">Tutor Registration</h1>
+    <p style="color: crimson; text-align: center;">To apply and become a tutor, create a tutor account before applying for student courses to teach. Please fill out all the fields below.</p>
 
-  <div class="usernameField">
-    <p-toast position="top-right"></p-toast>
-    <div class="p-float-label">
-      <input id="float-input" type="text" pInputText [(ngModel)]="email">
-      <label for="float-input">Email</label>
+    <div class="usernameField">
+      <p-toast position="top-right"></p-toast>
+      <div class="p-float-label">
+        <input id="float-input" type="text" pInputText [(ngModel)]="email">
+        <label for="float-input">Email</label>
+      </div>
     </div>
-  </div>
-  
-
-  <div class="passwordField">
-    <p-password [(ngModel)]="password" [toggleMask]="true">
-      <ng-template pTemplate="header">
-          <h6>Pick a password</h6>
-      </ng-template>
-      <ng-template pTemplate="footer">
-        <p-divider></p-divider>
-        <p class="mt-2">Suggestions</p>
-        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-          <li>At least one lowercase</li>
-          <li>At least one uppercase</li>
-          <li>At least one numeric</li>
-          <li>Minimum 8 characters</li>
-        </ul>
-      </ng-template>
-    </p-password>
-  </div>
-
-  <div class="container">
-    <div class="firstNameContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="firstName" style="font-family: 'Lato';">First Name</label></div>
-      <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
-    </div>
-
-    <div class="lastNameContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="lastName" style="font-family: 'Lato';">Last Name</label></div>
-      <div><input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
-    </div>
-
-    <div class="phoneNumberContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="phone" style="font-family: 'Lato';">Phone Number</label></div>
-      <div><input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
-    </div>
-
-    <div class="birthDateContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="birthday" style="font-family: 'Lato';">Birth Date</label></div>
-      <div><p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar></div>
-    </div>
-
-    <div class="genderContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div style="text-align:right"><label>Gender</label></div>
-      <div class="field-radiobutton">
-        <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
-        <label for="gender1" style="padding-left: 5px; padding-right: 10px;">Male</label>
-      
-        <p-radioButton name="sex" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
-        <label for="gender2" style="padding-left: 5px; padding-right: 10px;">Female</label>
     
-        <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
-        <label for="gender3" style="padding-left: 5px; padding-right: 10px;">Other</label>
+
+    <div class="passwordField">
+      <p-password [(ngModel)]="password" [toggleMask]="true">
+        <ng-template pTemplate="header">
+            <h6>Pick a password</h6>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <p-divider></p-divider>
+          <p class="mt-2">Suggestions</p>
+          <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+            <li>At least one lowercase</li>
+            <li>At least one uppercase</li>
+            <li>At least one numeric</li>
+            <li>Minimum 8 characters</li>
+          </ul>
+        </ng-template>
+      </p-password>
+    </div>
+
+    <div class="container">
+      <div class="firstNameContainer" style="font-family: 'Lato'; font-size: 18px;">
+        <div><label for="firstName" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">First Name</label></div>
+        <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
       </div>
-    </div>
 
-    <div class="homeAddressContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="integeronly">Home Address</label></div>
-      <div><input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
-    </div>
-
-    <div class="postalCodeContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="postalCode">Postal Code</label></div>
-      <div><input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
-    </div>
-
-    <div class="cityContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="integeronly">City</label></div>
-      <div><input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
-    </div>
-
-    <div class="provinceContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div><label for="integeronly">Province</label></div>
-      <div><input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
-    </div>
-
-    <div class="experienceContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div style="text-align: right;"><label>Do you have past work experience as a tutor?</label></div>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="wasTutor" inputId="yes"></p-radioButton>
-        <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
-  
-        <p-radioButton name="option" value="no" [(ngModel)]="wasTutor" inputId="no"></p-radioButton>
-        <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+      <div class="lastNameContainer" style="font-family: 'Lato'; font-size: 18px;">
+        <div><label for="lastName" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">Last Name</label></div>
+        <div><input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
       </div>
-    </div>
 
-    <div class="eligibilityContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div style="text-align: right;"><label>Are you eligible to work in Canada?</label></div>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="eligibleToWork" inputId="yes"></p-radioButton>
-        <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
+      <div class="phoneNumberContainer" style="font-family: 'Lato'; font-size: 18px;">
+        <div><label for="phone" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">Phone Number</label></div>
+        <div><input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
+      </div>
+
+      <div class="birthDateContainer" style="font-family: 'Lato'; font-size: 18px;">
+        <div><label for="birthday" style="font-family: 'Lato';  font-size: 18px; color: #47525E;">Birth Date</label></div>
+        <div><p-calendar inputId="basic" [(ngModel)]="birthday"></p-calendar></div>
+      </div>
+
+      <div class="genderContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div style="text-align:right"><label>Gender</label></div>
+        <div class="field-radiobutton">
+          <p-radioButton name="sex" value="Male" [(ngModel)]="gender" inputId="gender1"></p-radioButton>
+          <label for="gender1" style="padding-left: 5px; padding-right: 10px;">Male</label>
+        
+          <p-radioButton name="sex" value="Female" [(ngModel)]="gender" inputId="gender2"></p-radioButton>
+          <label for="gender2" style="padding-left: 5px; padding-right: 10px;">Female</label>
       
-        <p-radioButton name="option" value="no" [(ngModel)]="eligibleToWork" inputId="no"></p-radioButton>
-        <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+          <p-radioButton name="sex" value="Other" [(ngModel)]="gender" inputId="gender3"></p-radioButton>
+          <label for="gender3" style="padding-left: 5px; padding-right: 10px;">Other</label>
+        </div>
       </div>
-    </div>
 
-    <div class="ageCheckContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div style="text-align: right;"><label>Are you over the age of 18?</label></div>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="yes" [(ngModel)]="over18" inputId="yes"></p-radioButton>
-        <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
-      
-        <p-radioButton name="option" value="no" [(ngModel)]="over18" inputId="no"></p-radioButton>
-        <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+      <div class="homeAddressContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div><label for="integeronly">Home Address</label></div>
+        <div><input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
       </div>
-    </div>
 
-    <div class="applicationPosContainer" style="font-family: 'Lato'; font-size: 18px;">
-      <div style="text-align: right;"><label>Are you applying for a paid or volunteer position?</label></div>
-      <div class="field-radiobutton">
-        <p-radioButton name="option" value="paid" [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
-        <label for="paid" style="padding-left: 5px; padding-right: 10px;">Paid</label>
-      
-        <p-radioButton name="option" value="volunteer" [(ngModel)]="isPaid" inputId="volunteer"></p-radioButton>
-        <label for="volunteer" style="padding-left: 5px; padding-right: 10px;">Volunteer</label>
+      <div class="postalCodeContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div><label for="postalCode">Postal Code</label></div>
+        <div><input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
       </div>
-    </div>
 
-    <p style="font-family: 'Lato'; font-size: 18px; text-align: center;">Please attach your Resume below. (Accepted forms: '.docx' & '.pdf')</p>
-    <p-fileUpload name="myfile[]" url="./upload.php" style="text-align: center"></p-fileUpload>
+      <div class="cityContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div><label for="integeronly">City</label></div>
+        <div><input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
+      </div>
 
-    <div class="submitButton">
-      <p-button label="Submit" (onClick)="this.submit()"></p-button>
+      <div class="provinceContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div><label for="integeronly">Province</label></div>
+        <div><input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
+      </div>
+
+      <div class="experienceContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div style="text-align: right;"><label>Do you have past work experience as a tutor?</label></div>
+        <div class="field-radiobutton">
+          <p-radioButton name="option" value="yes" [(ngModel)]="wasTutor" inputId="yes"></p-radioButton>
+          <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
+    
+          <p-radioButton name="option" value="no" [(ngModel)]="wasTutor" inputId="no"></p-radioButton>
+          <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+        </div>
+      </div>
+
+      <div class="eligibilityContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div style="text-align: right;"><label>Are you eligible to work in Canada?</label></div>
+        <div class="field-radiobutton">
+          <p-radioButton name="option" value="yes" [(ngModel)]="eligibleToWork" inputId="yes"></p-radioButton>
+          <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
+        
+          <p-radioButton name="option" value="no" [(ngModel)]="eligibleToWork" inputId="no"></p-radioButton>
+          <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+        </div>
+      </div>
+
+      <div class="ageCheckContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div style="text-align: right;"><label>Are you over the age of 18?</label></div>
+        <div class="field-radiobutton">
+          <p-radioButton name="option" value="yes" [(ngModel)]="over18" inputId="yes"></p-radioButton>
+          <label for="yes" style="padding-left: 5px; padding-right: 10px;">Yes</label>
+        
+          <p-radioButton name="option" value="no" [(ngModel)]="over18" inputId="no"></p-radioButton>
+          <label for="no" style="padding-left: 5px; padding-right: 10px;">No</label>
+        </div>
+      </div>
+
+      <div class="applicationPosContainer" style="font-family: 'Lato'; font-size: 18px; color: #47525E;">
+        <div style="text-align: right;"><label>Are you applying for a paid or volunteer position?</label></div>
+        <div class="field-radiobutton">
+          <p-radioButton name="option" value="paid" [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
+          <label for="paid" style="padding-left: 5px; padding-right: 10px;">Paid</label>
+        
+          <p-radioButton name="option" value="volunteer" [(ngModel)]="isPaid" inputId="volunteer"></p-radioButton>
+          <label for="volunteer" style="padding-left: 5px; padding-right: 10px;">Volunteer</label>
+        </div>
+      </div>
+
+      <p style="font-family: 'Lato'; font-size: 18px; color: #47525E;text-align: center;">Please attach your Resume below. (Accepted forms: '.docx' & '.pdf')</p>
+      <p-fileUpload name="myfile[]" url="./upload.php" style="text-align: center"></p-fileUpload>
+
+      <div class="submitButton">
+        <p-button label="Submit" (onClick)="this.submit()"></p-button>
+      </div>
     </div>
   </div>
 </body>

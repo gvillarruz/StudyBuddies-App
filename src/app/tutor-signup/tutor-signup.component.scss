@@ -1,11 +1,26 @@
+h1 {
+    font-family: 'Abril Fatface'; 
+    font-size: 40px; 
+    text-align: center; 
+    padding-top: 40px;
+    color: #47525E;
+}
+
+.whiteBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: auto;
+    height: auto;
+}
+
 .usernameField {
     margin-top: 40px;
-    margin-left: 670px;
+    margin-left: 570px;
     margin-bottom: 10px;
 }
 
 .passwordField {
-    margin-left: 670px;
+    margin-left: 570px;
 }
 
 .firstNameContainer {
@@ -16,7 +31,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .lastNameContainer {
@@ -27,7 +42,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .phoneNumberContainer {
@@ -38,7 +53,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .birthDateContainer {
@@ -49,7 +64,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .genderContainer {
@@ -59,7 +74,7 @@
     grid-template-columns: 200px 400px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .field-radiobutton {
@@ -74,7 +89,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .postalCodeContainer {
@@ -85,7 +100,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .cityContainer {
@@ -96,7 +111,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .provinceContainer {
@@ -107,7 +122,7 @@
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .experienceContainer {
@@ -117,7 +132,7 @@
     grid-template-columns: 200px 400px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .eligibilityContainer {
@@ -127,7 +142,7 @@
     grid-template-columns: 200px 400px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .ageCheckContainer {
@@ -137,7 +152,7 @@
     grid-template-columns: 200px 400px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .applicationPosContainer {
@@ -147,7 +162,7 @@
     grid-template-columns: 200px 400px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 450px;
+    margin-left: 350px;
 }
 
 .submitButton {

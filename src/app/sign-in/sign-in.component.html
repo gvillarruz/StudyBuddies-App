@@ -1,13 +1,23 @@
-<body style="background-color:#DCEEF0">
-<h1>Login</h1>
+<body style="background-color:#DCEEF0; padding: 100px;">
+  <div class="whiteBg">
+    <div class="greenBg">
+      <h1>Login</h1>
+      <div class="usernameField">
+        <p-toast position="top-right"></p-toast>
+        <div class="p-float-label">
+          <input id="float-input" type="text" pInputText [(ngModel)]="email">
+          <label for="float-input">Email</label>
+        </div>
+      </div>
+      
+      <div class="passwordField">
+        <p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password>
+      </div>
 
-<p-toast position="top-right"></p-toast>
-
-<div class="p-float-label"><input id="float-input" type="text" pInputText [(ngModel)]="email">
-  <label for="float-input">Email</label></div>
-
-<div><p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password></div>
-
-<div><p-button label="Submit" (click)="this.signIn()" ></p-button></div>
+      <div class="signinButton">
+        <p-button label="Sign In" (click)="this.signIn()"></p-button>
+      </div>
+    </div>
+  </div>
 </body>
 

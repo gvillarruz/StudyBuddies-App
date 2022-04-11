@@ -1,77 +1,79 @@
-<body style="background-color: #DCEEF0;">
-  <h1 style="text-align: center; padding-top: 40px;">Parent / Guardian Information Registration:</h1>
-  <p style="color: crimson; text-align: center;">To register the student for one of our tutoring services, please fill out all the fields below.</p>
+<body style="background-color: #DCEEF0; padding: 80px">
+  <div class="whiteBg">
+    <h1>Parent / Guardian Information Registration:</h1>
+    <p style="font-family: 'Lato'; font-size: 18px; color: crimson; text-align: center;">To register the student for one of our tutoring services, please fill out all the fields below.</p>
 
-  <div class="usernameField">
-    <p-toast position="top-right" style="text-align: center;"></p-toast>
-    <div class="p-float-label">
-      <input id="float-input" type="text" pInputText [(ngModel)]="email">
-      <label for="float-input">Email</label>
+    <div class="usernameField">
+      <p-toast position="top-right" style="text-align: center;"></p-toast>
+      <div class="p-float-label">
+        <input id="float-input" type="text" pInputText [(ngModel)]="email">
+        <label for="float-input">Email</label>
+      </div>
     </div>
-  </div>
-  
-  <div class="passwordField">
-    <p-password id="pass-input-float" [(ngModel)]="password" [toggleMask]="true">
-      <ng-template pTemplate="header">
-          <h6>Pick a password</h6>
-      </ng-template>
-      <ng-template pTemplate="footer">
-        <p-divider></p-divider>
-        <p class="mt-2">Suggestions</p>
-        <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-          <li>At least one lowercase</li>
-          <li>At least one uppercase</li>
-          <li>At least one numeric</li>
-          <li>Minimum 8 characters</li>
-        </ul>
-      </ng-template>
-    </p-password>
-    <!--<label for="pass-input-float">Password</label>-->
-  </div>
-
-  <div class="container">
-    <div class="firstNameContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Parent/Guardian's First Name</label></div>
-      <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
+    
+    <div class="passwordField">
+      <p-password id="pass-input-float" [(ngModel)]="password" [toggleMask]="true">
+        <ng-template pTemplate="header">
+            <h6>Pick a password</h6>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <p-divider></p-divider>
+          <p class="mt-2">Suggestions</p>
+          <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+            <li>At least one lowercase</li>
+            <li>At least one uppercase</li>
+            <li>At least one numeric</li>
+            <li>Minimum 8 characters</li>
+          </ul>
+        </ng-template>
+      </p-password>
+      <!--<label for="pass-input-float">Password</label>-->
     </div>
 
-    <div class="lastNameContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Parent/Guardian's Last Name</label></div>
-      <div><input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
+    <div class="container">
+      <div class="firstNameContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Parent/Guardian's First Name</label></div>
+        <div><input type="text" pInputText [(ngModel)]="firstName" inputId="firstName"></div>
+      </div>
+
+      <div class="lastNameContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Parent/Guardian's Last Name</label></div>
+        <div><input type="text" pInputText [(ngModel)]="lastName" inputId="lastName"></div>
+      </div>
+
+      <div class="phoneNumberContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Parent's Phone Number</label></div>
+        <div><input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
+      </div>
+
+      <div class="homeAddressContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Home Address</label></div>
+        <div><input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
+      </div>
+
+      <div class="postalCodeContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Postal Code</label></div>
+        <div><input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
+      </div>
+
+      <div class="cityContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">City</label></div>
+        <div><input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
+      </div>
+
+      <div class="provinceContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Province</label></div>
+        <div><input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
+      </div>
+
+      <div class="relationContainer">
+        <div><label for="integeronly" style="font-family: 'Lato'; color: #47525E; font-size: 18px;">Relation to Student</label></div>
+        <div><input type="text" pInputText [(ngModel)]="relation" inputId="relation"></div>
+      </div>
     </div>
 
-    <div class="phoneNumberContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Parent's Phone Number</label></div>
-      <div><input type="text" pInputText [(ngModel)]="phone" inputId="phone"></div>
+    <div class="submitButton">
+      <p-button label="Submit" (click)="this.submit()"></p-button>
     </div>
-
-    <div class="homeAddressContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Home Address</label></div>
-      <div><input type="text" pInputText [(ngModel)]="address" inputId="address"></div>
-    </div>
-
-    <div class="postalCodeContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Postal Code</label></div>
-      <div><input type="text" pInputText [(ngModel)]="postalCode" inputId="postalCode"></div>
-    </div>
-
-    <div class="cityContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">City</label></div>
-      <div><input type="text" pInputText [(ngModel)]="city" inputId="city"></div>
-    </div>
-
-    <div class="provinceContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Province</label></div>
-      <div><input type="text" pInputText [(ngModel)]="province" inputId="province"></div>
-    </div>
-
-    <div class="relationContainer">
-      <div><label for="integeronly" style="font-family: 'Lato';">Relation to Student</label></div>
-      <div><input type="text" pInputText [(ngModel)]="relation" inputId="relation"></div>
-    </div>
-  </div>
-
-  <div class="submitButton">
-    <p-button label="Submit" (click)="this.submit()"></p-button>
   </div>
 </body>

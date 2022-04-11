@@ -1,0 +1,40 @@
+h1 {
+    color: #47525E;
+    font-family: "Abril Fatface";
+    font-size: "40px";
+    text-align: center;
+    padding-top: 80px;
+}
+
+.whiteBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: auto;
+    height: auto;
+    padding: 80px;
+}
+
+.greenBg {
+    align-items: center;
+    align-self: center;
+    background-color: #DCEEF0;
+    width: 700px;
+    height: auto;
+    margin: auto;
+}
+
+.usernameField {
+    margin-top: 40px;
+    margin-left: 260px;
+    margin-bottom: 10px;
+}
+
+.passwordField {
+    margin-left: 260px;
+}
+
+.signinButton {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
