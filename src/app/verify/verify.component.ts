@@ -65,19 +65,21 @@ export class VerifyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http
-      .post('/api/accountInfo', { token: localStorage.getItem('token') })
-      .subscribe((res: any) => {
-        console.log(res);
-        res.students.forEach((student) => {
-          this.studentOptions.push({
-            name: student.FirstName,
-            value: student.FirstName,
+    if (this.accountType == 'parent') {
+      this.http
+        .post('/api/accountInfo', { token: localStorage.getItem('token') })
+        .subscribe((res: any) => {
+          console.log(res);
+          res.students.forEach((student) => {
+            this.studentOptions.push({
+              name: student.FirstName,
+              value: student.FirstName,
+            });
           });
-        });
 
-        this.lastName = res.parentLastName;
-      });
+          this.lastName = res.parentLastName;
+        });
+    }
   }
 
   submission() {
