@@ -43,6 +43,7 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           {
 
@@ -70,6 +71,7 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           {
             label: 'Dashboard',
@@ -87,6 +89,7 @@ export class AppComponent {
       this.items = [
         {
           label: 'Study Buddies',
+          styleClass: 'menucus',
         },
         { 
           label: 'Home', 
@@ -102,7 +105,7 @@ export class AppComponent {
           label: 'Register',
           icon: 'pi pi-pencil',
           items: [
-            { label: 'Student', icon: 'pi pi-user', routerLink: 'student-signup', style:'' },
+            { label: 'Student', icon: 'pi pi-user', routerLink: 'student-signup' },
             { label: 'Tutor', icon: 'pi pi-user-edit', routerLink: 'tutor-signup' },
           ],
         },
@@ -120,7 +123,8 @@ export class AppComponent {
         if (type == 'parent') {
           this.items = [
             {
-              label: 'Study Buddies',              
+              label: 'Study Buddies',
+              styleClass: 'menucus',              
             },
             {
               label: 'Dashboard',

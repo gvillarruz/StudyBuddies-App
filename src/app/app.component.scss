@@ -1,5 +1,5 @@
-::ng-deep .menucus ul li:nth-child(1) {
-    background: #DCEEF0;
+:host ::ng-deep .menucus {
+    background-color: #DCEEF0;
     color: #FFFFFF;
     font-family: 'Abril Fatface';
     font-size: 26px;
