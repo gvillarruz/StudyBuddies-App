@@ -19,10 +19,14 @@ export class AppComponent {
 
   loggedInStatus: boolean;
   regularItems = [
-    { label: 'About', icon: 'pi pi-fw pi-file', routerLink: 'about' },
+    { 
+      label: 'About', 
+      icon: 'pi pi-fw pi-info-circle', 
+      routerLink: 'about' 
+    },
     {
       label: 'Contact Us',
-      icon: 'pi pi-fw pi-file',
+      icon: 'pi pi-fw pi-map',
       routerLink: 'contact',
     },
   ];
@@ -39,26 +43,27 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           {
 
             label: 'Dashboard',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-desktop',
             routerLink: 'dashboard',
           },
           {
             label: 'Course Registration',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-server',
             routerLink: 'course-registration',
           },
           {
             label: 'Student Registration',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-user-plus',
             routerLink: 'stud-reg-b',
           },
           {
             label: 'Verify',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-key',
             routerLink: 'verify',
           },
         ];
@@ -66,15 +71,16 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           {
             label: 'Dashboard',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-desktop',
             routerLink: 'dashboard',
           },
           {
             label: 'Verify',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-key',
             routerLink: 'verify',
           },
         ];
@@ -83,6 +89,7 @@ export class AppComponent {
       this.items = [
         {
           label: 'Study Buddies',
+          styleClass: 'menucus',
         },
         { 
           label: 'Home', 
@@ -91,15 +98,15 @@ export class AppComponent {
         },
         {
           label: 'Services',
-          icon: 'pi pi-fw pi-file',
+          icon: 'pi pi-fw pi-cog',
           routerLink: 'services',
         },
         {
           label: 'Register',
           icon: 'pi pi-pencil',
           items: [
-            { label: 'Student', routerLink: 'student-signup' },
-            { label: 'Tutor', routerLink: 'tutor-signup' },
+            { label: 'Student', icon: 'pi pi-user', routerLink: 'student-signup' },
+            { label: 'Tutor', icon: 'pi pi-user-edit', routerLink: 'tutor-signup' },
           ],
         },
         ...this.regularItems,
@@ -117,27 +124,26 @@ export class AppComponent {
           this.items = [
             {
               label: 'Study Buddies',
-              style: 'background-color: #DCEEF0'
-              
+              styleClass: 'menucus',              
             },
             {
               label: 'Dashboard',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-desktop',
               routerLink: 'dashboard',
             },
             {
               label: 'Course Registration',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-server',
               routerLink: 'course-registration',
             },
             {
               label: 'Student Registration',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-user-plus',
               routerLink: 'stud-reg-b',
             },
             {
               label: 'Verify',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-key',
               routerLink: 'verify',
             },
           ];
@@ -145,15 +151,16 @@ export class AppComponent {
           this.items = [
             {
               label: 'Study Buddies',
+              styleClass: 'menucus',
             },
             {
               label: 'Dashboard',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-desktop',
               routerLink: 'dashboard',
             },
             {
               label: 'Verify',
-              icon: 'pi pi-fw pi-file',
+              icon: 'pi pi-fw pi-key',
               routerLink: 'verify',
             },
           ];
@@ -162,6 +169,7 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           { 
             label: 'Home', 
@@ -170,15 +178,15 @@ export class AppComponent {
           },
           {
             label: 'Services',
-            icon: 'pi pi-fw pi-file',
+            icon: 'pi pi-fw pi-cog',
             routerLink: 'services',
           },
           {
             label: 'Register',
             icon: 'pi pi-pencil',
             items: [
-              { label: 'Student', routerLink: 'student-signup' },
-              { label: 'Tutor', routerLink: 'tutor-signup' },
+              { label: 'Student', icon: 'pi pi-user', routerLink: 'student-signup' },
+              { label: 'Tutor', icon: 'pi pi-user-edit', routerLink: 'tutor-signup' },
             ],
           },
           ...this.regularItems,

@@ -22,31 +22,6 @@ h3 {
     padding: 40px;
 }
 
-/*.mainHeaderGroup {
-    justify-content: left;
-    align-items: left;
-    text-align:  left;
-    display: grid;
-    grid-template-columns: 300px 700px;
-    column-gap: 10px;
-}
-
-.mainHeaderGroup p:nth-of-type(1) {
-    color: #47525E;
-    font-family: 'Abril Fatface';
-    font-weight: bold;
-    font-size: 64px;
-    text-align: left;
-}
-
-.mainHeaderGroup p:nth-of-type(1) {
-    color: #47525E;
-    font-weight: bold;
-    font-family: 'Abril Fatface';
-    font-size: 64px;
-    text-align: left;
-}*/
-
 .tutorHeaderGroup {
     justify-content: left;
     align-items: left;
@@ -93,12 +68,43 @@ h3 {
     margin-top: 30px;
 }
 
-
-
-.scheduledTableBg {
+.parentScheduledTableBg {
     align-self: center;
     background-color: #FFFFFF;
     width: 850px;
     height: auto;
     padding: 10px;
 }
+
+.tutorScheduledTableBg {
+    align-self: center;
+    background-color: #FFFFFF;
+    width: 850px;
+    height: auto;
+    padding: 10px;
+}
+
+/*.mainHeaderGroup {
+    justify-content: left;
+    align-items: left;
+    text-align:  left;
+    display: grid;
+    grid-template-columns: 300px 700px;
+    column-gap: 10px;
+}
+
+.mainHeaderGroup p:nth-of-type(1) {
+    color: #47525E;
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    font-size: 64px;
+    text-align: left;
+}
+
+.mainHeaderGroup p:nth-of-type(1) {
+    color: #47525E;
+    font-weight: bold;
+    font-family: 'Abril Fatface';
+    font-size: 64px;
+    text-align: left;
+}*/

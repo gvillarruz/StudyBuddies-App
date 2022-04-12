@@ -19,8 +19,8 @@
     <ng-template #elseTemplate>
       <h1>Student Pick-Up Verification</h1>
       <div class="registrationCodeField">
+        <div style="text-align: right;"><label for="float-input">Unique Code</label></div>
         <div><input id="float-input" type="text" pInputText [(ngModel)]="verifyCode"></div>
-        <div><label for="float-input">Unique Code</label></div>
       </div>
 
       <div class="verifyButton"><p-button label="Verify" (onClick)="this.verification()"></p-button></div>

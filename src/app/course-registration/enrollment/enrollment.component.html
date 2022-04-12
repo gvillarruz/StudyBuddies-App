@@ -21,80 +21,45 @@
     <ng-container *ngIf="true;"></ng-container>
     
     <ng-container *ngIf="this.results.length != 0;">
-      <h2 style="font-family: 'Lato'; font-size: 25px; color:#47525E;">Results</h2>
-    
-      <div class="studentEnrollField">
-        <div style="text-align: right;"><label>Select Student to Enroll:</label></div>
-        <div style="margin-bottom: 20px;"><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
+      <div class="resultsTableBg">
+        <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px; margin: auto">
+            <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 25px; border-radius: 10px; margin: auto">
+              
+              <h2 style="font-family: 'Lato'; font-size: 25px; color:#47525E; margin-left: 10px; text-align: center;">Results</h2>
+            
+              <div class="studentEnrollField">
+                <div style="text-align: right; margin: auto;"><label>Select Student to Enroll:</label></div>
+                <div><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
+              </div>
+
+              <table class="resultsTable" style="border:3px solid #47525E;">
+                <thead>
+                  <tr>
+                      <th style="width:60px">Class ID</th>
+                      <th style="width:60px">Package Chosen</th>
+                      <th style="width:60px">Class Type</th>
+                      <th style="width:60px">Service Type</th>
+                      <th style="width:60px">Subject</th>
+                      <th style="width:60px">Grade</th>
+                      <th style="width:60px; padding-right: 10px;">Slot</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of results">
+                      <td style="width:80px; padding-right: 10px;">{{data.ClassesAvailable_ID}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.ServiceForm}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.TutoringService}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td>
+                      <td style="width:80px; padding-right: 10px;">{{data.AvailableSlots}}</td>
+                      <p-button label="Register" style="width:80px; padding-right: 10px;" (onClick)="this.register(data)"></p-button>
+                  </tr>
+              </tbody>
+              </table>
+            </div>
+        </div>
       </div>
-    
-      <table class="resultsTable" style="justify-content: center;">
-        <thead>
-          <tr>
-              <th style="width:60px">Class ID</th>
-              <th style="width:60px">Package Chosen</th>
-              <th style="width:60px">Class Type</th>
-              <th style="width:60px">Service Type</th>
-              <th style="width:60px">Subject</th>
-              <th style="width:60px">Grade</th>
-              <th style="width:60px; padding-right: 10px;">Slot</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let data of results">
-              <td>{{data.ClassesAvailable_ID}}</td>
-              <td>{{data.PackageChosen}}</td>
-              <td>{{data.ServiceForm}}</td>
-              <td>{{data.TutoringService}}</td>
-              <td>{{data.Subject}}</td>
-              <td>{{data.Grade}}</td>
-              <td>{{data.AvailableSlots}}</td>
-              <p-button label="Register" (onClick)="this.register(data)"></p-button>
-          </tr>
-      </tbody>
-    
-      </table>
     </ng-container>
   </div>
 </body>
-
-
-<!-- <div>
-  <label>Do you want the student to enroll for paid tutoring or Drop-Off Sesions?</label>
-  <div class="field-radiobutton">
-    <p-radioButton name="option" [value]=true [(ngModel)]="isPaid" inputId="paid"></p-radioButton>
-    <label for="paid">Paid Tutoring</label>
-</div>
-<div class="field-radiobutton">
-    <p-radioButton name="option" [value]=false [(ngModel)]="isPaid" inputId="free"></p-radioButton>
-    <label for="free">Drop-Off Sessions</label>
-</div>
-
-<div>
-  <label>Select the tutoring method you want to opt for:</label>
-  <div class="field-radiobutton">
-    <p-radioButton name="option" [value]=true [(ngModel)]="isOnline" inputId="online"></p-radioButton>
-    <label for="online">Online</label>
-</div>
-<div class="field-radiobutton">
-    <p-radioButton name="option" [value]=false [(ngModel)]="isOnline" inputId="offline"></p-radioButton>
-    <label for="offline">In-Person</label>
-</div>
-
-<div>
-  <label>Select the tutoring form you want to opt for:</label>
-  <div class="field-radiobutton">
-    <p-radioButton name="option" [value]=true [(ngModel)]="isGroup" inputId="single"></p-radioButton>
-    <label for="single">One-on-One Tutoring</label>
-</div>
-<div class="field-radiobutton">
-    <p-radioButton name="option" [value]=false [(ngModel)]="isGroup" inputId="group"></p-radioButton>
-    <label for="group">Group Tutoring</label>
-</div> -->
-
-
-
-
-
-
-
