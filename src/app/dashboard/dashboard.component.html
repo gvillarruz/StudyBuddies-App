@@ -29,7 +29,7 @@
                 <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
                     <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
                         <h3>Scheduled tutoring sessions of my child(ren):</h3>
-
+            
                         <table style="border:3px solid #47525E; margin-left: 50px; margin-bottom: 40px; padding-left: 15px; padding-right: 15px; padding-top: 15px;">
                         <thead>
                             <tr>
@@ -59,32 +59,49 @@
             </div>
         </ng-container>
         <ng-template #elseTemplate>
-          <h2 >Welcome, {{(this.username)}}!</h2>
             <div class="tutorHeaderGroup">
                 <div><img src="assets/dashboardUserPic.png"></div>
                 <div><p>Dashboard</p></div>
             </div>
-            <div>
-              <table style="border:3px solid #47525E; margin-left: 50px; margin-bottom: 40px;">
-                <thead>
-                    <tr>
-                        <th style="width:80px; padding-right: 10px;">Service</th>
-                        <th style="width:80px; padding-right: 10px;">Subject</th>
-                        <th style="width:80px; padding-right: 10px;">Delivery Type</th>
-                        <th style="width:80px; padding-right: 10px;">Package Type</th>
-                        <th style="width:80px; padding-right: 10px;">Time slot</th>
-                    </tr>
-                </thead>
-                <tbody style="text-align: center;">
-                    <tr *ngFor="let data of dashboardTutorData">
-                        <td style="width:80px; padding-right: 10px;">{{data.TutoringService}}</td>
-                        <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
-                        <td style="width:80px; padding-right: 10px;">{{data.ServiceForm}}</td>
-                        <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
-                        <td style="width:80px; padding-right: 10px;">{{data.AvailableSlots}}</td>
-                    </tr>
-                </tbody>
-                </table>
+            <div style="
+            color:#47525E;
+            font-family: 'Lato';
+            font-size: 38px;
+            font-weight:bold;
+            text-align: left;
+            width: 200px;
+            height: auto;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #969FAA;">
+                <p>Welcome, {{(this.username)}}!</p>
+            </div>
+        
+            <div class="tutorScheduledTableBg" style="align-items: center; margin: auto;">
+                <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
+                    <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
+                        <h3>Scheduled tutoring sessions of my courses:</h3>
+
+                        <table style="border:3px solid #47525E; margin-left: 150px; margin-bottom: 40px;">
+                        <thead>
+                            <tr>
+                                <th style="width:80px; padding-right: 10px;">Service Type</th>
+                                <th style="width:80px; padding-right: 10px;">Subject</th>
+                                <th style="width:80px; padding-right: 10px;">Delivery Method</th>
+                                <th style="width:80px; padding-right: 10px;">Time slot</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            <tr *ngFor="let data of dashboardStudentData">
+                                <td style="width:80px; padding-right: 10px;">{{data.TutoringService}}</td>
+                                <!-- <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td> -->
+                                <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.AvailableSlots}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </ng-template>
     </div>

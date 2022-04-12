@@ -7,4 +7,11 @@
     border-radius: 10px;
     border:3px solid #47525E;
     margin-right: 20px;
+    
+}
+
+:host ::ng-deep .logoImage {
+    width: 30px;
+    height: 40px;
+    background-image: url("/assets/logo.png");
 }

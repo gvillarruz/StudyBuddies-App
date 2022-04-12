@@ -44,6 +44,7 @@ export class AppComponent {
           {
             label: 'Study Buddies',
             styleClass: 'menucus',
+            icon: 'logoImage',
           },
           {
 
@@ -72,6 +73,7 @@ export class AppComponent {
           {
             label: 'Study Buddies',
             styleClass: 'menucus',
+            icon: 'logoImage',
           },
           {
             label: 'Dashboard',
@@ -90,6 +92,7 @@ export class AppComponent {
         {
           label: 'Study Buddies',
           styleClass: 'menucus',
+          icon: 'logoImage',
         },
         { 
           label: 'Home', 
@@ -124,7 +127,8 @@ export class AppComponent {
           this.items = [
             {
               label: 'Study Buddies',
-              styleClass: 'menucus',              
+              styleClass: 'menucus',
+              icon: 'logoImage',             
             },
             {
               label: 'Dashboard',
@@ -152,6 +156,7 @@ export class AppComponent {
             {
               label: 'Study Buddies',
               styleClass: 'menucus',
+              icon: 'logoImage',
             },
             {
               label: 'Dashboard',
@@ -170,6 +175,7 @@ export class AppComponent {
           {
             label: 'Study Buddies',
             styleClass: 'menucus',
+            icon: 'logoImage',
           },
           { 
             label: 'Home', 
