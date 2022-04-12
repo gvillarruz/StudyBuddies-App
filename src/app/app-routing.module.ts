@@ -35,7 +35,11 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'verify', component: VerifyComponent, canActivate: [AuthGuard] },
+  { 
+    path: 'verify', 
+    component: VerifyComponent, 
+    canActivate: [AuthGuard] 
+  },
   {
     path: 'stud-reg-b',
     component: StudRegBComponent,
