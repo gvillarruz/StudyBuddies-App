@@ -24,7 +24,7 @@ h1 {
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 350px;
+    margin-left: 360px;
 }
 
 .subjectField {
@@ -37,7 +37,7 @@ h1 {
     grid-template-columns: 200px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 350px;
+    margin-left: 360px;
 }
 
 .submitButton {
@@ -48,12 +48,15 @@ h1 {
 
 .studentEnrollField {
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     font-family: 'Lato';
     font-size: 18px;
     color: #47525E;
+    /*display: table-cell;
+    vertical-align: middle;*/
+    margin-bottom: 30px;
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 180px 200px;
     column-gap: 10px;
 }
 
@@ -61,4 +64,19 @@ h1 {
     font-family: 'Lato';
     font-size: 16px;
     text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 15px;
+}
+
+.resultsTableBg {
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #FFFFFF;
+    width: 850px;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 40px;
 }

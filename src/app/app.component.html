@@ -1,7 +1,7 @@
 <body style="background-color:#DCEEF0">
   <p-menubar [model]="items">
-    <button pButton *ngIf="!this.loginService.userLoggedIn() " label="Sign In" icon="pi pi-power-off" routerLink='signin'></button>
-    <button pButton *ngIf="this.loginService.userLoggedIn()" label="Logout" icon="pi pi-power-off" routerLink='home' (click)="this.loginService.logoutUser()"></button>
+    <button pButton *ngIf="!this.loginService.userLoggedIn() " label="Sign In" style="margin-right: 15px;" icon="pi pi-power-off" routerLink='signin'></button>
+    <button pButton *ngIf="this.loginService.userLoggedIn()" label="Logout" style="margin-right: 15px;" icon="pi pi-power-off" routerLink='home' (click)="this.loginService.logoutUser()"></button>
   </p-menubar>
 </body>
 <router-outlet></router-outlet>
