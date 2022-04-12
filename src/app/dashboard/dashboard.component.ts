@@ -51,14 +51,13 @@ export class DashboardComponent implements OnInit {
           console.log(res);
         });
     } else {
-
       this.http
         .post('/api/dashboard', {
           Token: localStorage.getItem('token'),
           type: localStorage.getItem('userType'),
         })
         .subscribe((res: any) => {
-          console.log(res);
+          this.username = res.tutorFirstName + ' ' + res.tutorLastName;
           this.dashboardTutorData = res.scheduledSessions;
         });
     }
