@@ -151,6 +151,7 @@ export class AppComponent {
           this.items = [
             {
               label: 'Study Buddies',
+              styleClass: 'menucus',
             },
             {
               label: 'Dashboard',
@@ -168,6 +169,7 @@ export class AppComponent {
         this.items = [
           {
             label: 'Study Buddies',
+            styleClass: 'menucus',
           },
           { 
             label: 'Home', 
