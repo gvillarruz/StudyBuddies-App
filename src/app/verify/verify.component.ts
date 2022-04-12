@@ -127,7 +127,7 @@ export class VerifyComponent implements OnInit {
     } else {
       this.http
         .post('/api/pickup', {
-          code: this.verifyCode,
+          code: Number(this.verifyCode),
         })
         .subscribe((data) => {
           if (data) {
