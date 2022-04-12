@@ -65,6 +65,7 @@ export class TutorSignupComponent implements OnInit {
           firstName: this.firstName,
           lastName: this.lastName,
           phoneNumber: this.phone,
+          email: this.email,
           birthdate: this.birthday,
           gender: this.gender,
           address: this.address,
