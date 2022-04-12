@@ -20,11 +20,12 @@
             text-align: left;
             width: 200px;
             height: auto;
+            padding-bottom: 20px;
             border-bottom: 4px solid #969FAA;">
                 <p>Welcome, {{(this.username)}}!</p>
             </div>
 
-            <div class="scheduledTableBg" style="align-items: center; margin: auto;">
+            <div class="parentScheduledTableBg" style="align-items: center; margin: auto;">
                 <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
                     <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
                         <h3>Scheduled tutoring sessions of my child(ren):</h3>
@@ -58,26 +59,6 @@
             </div>
         </ng-container>
         <ng-template #elseTemplate>
-          <h2 >Welcome, {{(this.username)}}!</h2>
-        <table>
-          <thead>
-              <tr>
-                  <th>Service Type</th>
-                  <th>Subject</th>
-                  <th>Delivery Method</th>
-                  <th>Time slot</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let data of dashboardStudentData">
-                  <td>{{data.TutoringService}}</td>
-                  <!-- <td>{{data.Grade}}</td> -->
-                  <td>{{data.Subject}}</td>
-                  <td>{{data.PackageChosen}}</td>
-                  <td>{{data.AvailableSlots}}</td>
-              </tr>
-          </tbody>
-          </table>
             <div class="tutorHeaderGroup">
                 <div><img src="assets/dashboardUserPic.png"></div>
                 <div><p>Dashboard</p></div>
@@ -91,7 +72,35 @@
                 text-align: left;
                 width: 200px;
                 height: auto;
-                border-bottom: 4px solid #969FAA;">Welcome, tutor!</p>
+                padding-bottom: 20px;
+                border-bottom: 4px solid #969FAA;">Welcome, {{(this.username)}}!</p>
+            </div>
+            <div class="tutorScheduledTableBg" style="align-items: center; margin: auto;">
+                <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
+                    <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
+                        <h3>Scheduled tutoring sessions of my courses:</h3>
+
+                        <table style="border:3px solid #47525E; margin-left: 150px; margin-bottom: 40px;">
+                        <thead>
+                            <tr>
+                                <th style="width:80px; padding-right: 10px;">Service Type</th>
+                                <th style="width:80px; padding-right: 10px;">Subject</th>
+                                <th style="width:80px; padding-right: 10px;">Delivery Method</th>
+                                <th style="width:80px; padding-right: 10px;">Time slot</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            <tr *ngFor="let data of dashboardStudentData">
+                                <td style="width:80px; padding-right: 10px;">{{data.TutoringService}}</td>
+                                <!-- <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td> -->
+                                <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.AvailableSlots}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </ng-template>
     </div>

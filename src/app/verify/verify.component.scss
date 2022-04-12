@@ -40,17 +40,16 @@ h1 {
 }
 
 .registrationCodeField {
-    text-align: right;
     align-items: center;
     position: relative;
     font-family: 'Lato';
     font-size: 18px;
     color: #47525E;
     display: grid;
-    grid-template-columns: 300px 300px;
+    grid-template-columns: 150px 200px;
     grid-gap: 10px;
     padding: 10px;
-    margin-left: 350px;
+    justify-content: center;
 }
 
 .submitButton {
