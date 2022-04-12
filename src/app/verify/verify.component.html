@@ -4,12 +4,12 @@
     <ng-container *ngIf="this.accountType == 'parent'; else elseTemplate">
       <h1>Student Drop-Off</h1>
       <div class="studentSelectionField">
-        <div style="text-align: right;"><label>Select Student to Enroll</label></div>
+        <div style="text-align: right;"><label>Select Student to Drop off</label></div>
         <div><p-dropdown [options]="studentOptions" [(ngModel)]="selectedStudent" placeholder="Select a Student" optionLabel="name" [showClear]="true"></p-dropdown></div>
       </div>
-      
+
       <div class="timeSelectionField">
-        <div style="text-align: right;"><label>Select Time to Enroll</label></div>
+        <div style="text-align: right;"><label>Select Time to Drop Off</label></div>
         <div><p-dropdown [options]="timeSlots" [(ngModel)]="selectedTime" placeholder="Select Time Slot" optionLabel="name" [showClear]="true"></p-dropdown></div>
       </div>
 
