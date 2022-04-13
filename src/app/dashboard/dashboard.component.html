@@ -29,7 +29,7 @@
                 <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
                     <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
                         <h3>Scheduled tutoring sessions of my child(ren):</h3>
-            
+
                         <table style="border:3px solid #47525E; margin-left: 50px; margin-bottom: 40px; padding-left: 15px; padding-right: 15px; padding-top: 15px;">
                         <thead>
                             <tr>
@@ -75,7 +75,7 @@
             border-bottom: 4px solid #969FAA;">
                 <p>Welcome, {{(this.username)}}!</p>
             </div>
-        
+
             <div class="tutorScheduledTableBg" style="align-items: center; margin: auto;">
                 <div style="background-color: #DCEEF0; width: max-content; height: inherit; padding: 15px; border-radius: 10px;">
                     <div style="background-color: #FFFFFF; width: inherit; height: inherit; padding: 15px; border-radius: 10px;">
@@ -86,15 +86,16 @@
                             <tr>
                                 <th style="width:80px; padding-right: 10px;">Service Type</th>
                                 <th style="width:80px; padding-right: 10px;">Subject</th>
+                                <th style="width:80px; padding-right: 10px;">Grade</th>
                                 <th style="width:80px; padding-right: 10px;">Delivery Method</th>
                                 <th style="width:80px; padding-right: 10px;">Time slot</th>
                             </tr>
                         </thead>
                         <tbody style="text-align: center;">
-                            <tr *ngFor="let data of dashboardStudentData">
+                            <tr *ngFor="let data of dashboardTutorData">
                                 <td style="width:80px; padding-right: 10px;">{{data.TutoringService}}</td>
-                                <!-- <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td> -->
                                 <td style="width:80px; padding-right: 10px;">{{data.Subject}}</td>
+                                <td style="width:80px; padding-right: 10px;">{{data.Grade}}</td>
                                 <td style="width:80px; padding-right: 10px;">{{data.PackageChosen}}</td>
                                 <td style="width:80px; padding-right: 10px;">{{data.AvailableSlots}}</td>
                             </tr>
